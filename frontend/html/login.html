@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/frontend/css/style.css" />
+</head>
+<body>
+    <div class='container'>
+        <div>
+            <img src="/frontend/html/images/icon-left-font-monochrome-black.png" />
+            <p>  Partagez et restez en contact avec vos collègues</p>
+        </div>
+        <div>
+          <form  method="POST" id="login-form">
+              <input id="email-login" type="text" name="username" placeholder="Email"  required />
+              <input id="password-login" type="password" name="password" placeholder="Password" />
+              <button type="submit" class="signup_button1">Connexion </button>
+          <hr></hr>
+          <button class="signup_button">  <a href="/frontend/html/signup.html">Créer un compte</a></button>
+          </form>
+        </div>
+    </div>
+      
+    
+</body>
+<script src="/frontend/js/login.js" ></script>
+<script> loginUser()</script>
+</html>

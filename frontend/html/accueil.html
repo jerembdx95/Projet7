@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEED</title>
+    <link rel="stylesheet" href="/frontend/css/style.css" />
+</head>
+<body>
+    
+        <div class='header_login'>
+        <h1>Groupomania</h1>
+        <ul id='header_menu'>
+            <li>Accueil</li>
+            <li><a href="profil.html">Profil</a></li>
+            <li id='logout'>Déconnexion </li>
+        </ul>
+      </div>
+      <div id="bienvenue"> </div>
+      <div class='articles'> 
+                   <form  method="POST" id="Create_article">
+                   <h1>Créer mon article</h1>
+                    <input id="article-nom" type="text" name="Name" placeholder="Titre" required /> 
+                    <textarea id="description" name="story"  placeholder="Message" rows="5" cols="33"></textarea>
+                    <button type="submit" id="signup_button1">Créer mon article</button>
+                    </form>
+                <div id='NewsFeed'>
+                    <h1>NewsFeed  </h1>
+                    <div></div>
+                </div>
+                  
+                </div>
+                <footer>
+                      <a  href="mention_legale.html"> Mentions Legales </a>
+                      <p id='Copyright'>Copyright © 2020 Groupomania - Tous droits réservés</p>
+                      <a  id='NousContacter'  href="mailto:nullepart@gmail.com">Contactez-nous</a>
+                      </footer>
+      
+    
+</body>
+<script src="/frontend/js/profil.js" ></script>
+<script src="/frontend/js/logout.js" ></script>
+<script src="/frontend/js/Articles.js" ></script>
+<script> logout()</script>
+<script> createArticle()</script>
+<script>getAllArticles()</script>
+<script>getArticles()</script>
+
+</html>
