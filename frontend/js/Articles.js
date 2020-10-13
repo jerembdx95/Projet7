@@ -62,9 +62,33 @@ welcome.innerHTML = "Welcome back " + name ;
         return response.json();
       })
       .then(function (article) {
-        getArticles(article);
+        console.log(article);
+        console.log(article.length)
+
+        let listeArticle = document.getElementById("NewsFeed");
+
+        article.forEach((article) => {
+    
+            let articleContenant = document.createElement("div");
+            let articleTitre = document.createElement("h1");
+            let articleDescription = document.createElement("p");
+      
+            articleTitre.setAttribute("class", "titre-article");
+            articleDescription.setAttribute("class", "description-article");
+            
+            listeArticle.appendChild(articleContenant);
+            articleContenant.appendChild(articleTitre);
+            articleContenant.appendChild(articleDescription);
         
+            articleTitre.innerHTML = article.name;
+            articleDescription.innerHTML = article.description;
+          });
+
+
+
+
         return article;
+       
       })
       .catch((error) => {
         console.log(error);
@@ -72,7 +96,13 @@ welcome.innerHTML = "Welcome back " + name ;
   }
 
   
-  function getArticles(article) {
+  
+    
+      
+
+/*
+
+function getArticles(article) {
 
     console.log(article);
    
@@ -95,10 +125,7 @@ welcome.innerHTML = "Welcome back " + name ;
         articleDescription.innerHTML = article.description;
       });
     }
-    
-      
-
-
+    */
 
 
 
