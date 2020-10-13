@@ -34,7 +34,7 @@ welcome.innerHTML = "Welcome back " + name ;
       .then(function (response) {
         status = response.status;
         if (status == 201) {
-          alert("post créé");
+          location.reload();
           return response.json();
         } else {
             alert("Le post n'a pas pu être créé.");
@@ -70,22 +70,31 @@ welcome.innerHTML = "Welcome back " + name ;
         article.forEach((article) => {
     
             let articleContenant = document.createElement("div");
+            let info = document.createElement('p')
             let articleTitre = document.createElement("h1");
+            let articleTrait = document.createElement("hr")
             let articleDescription = document.createElement("p");
+            
       
+            articleContenant.setAttribute("class", "post")
+            articleContenant.setAttribute("id", article.id)
             articleTitre.setAttribute("class", "titre-article");
             articleDescription.setAttribute("class", "description-article");
+            info.setAttribute("class", "info")
+
+            let nom = localStorage.getItem('name')
+            let prenom = localStorage.getItem('surname')
             
             listeArticle.appendChild(articleContenant);
+            articleContenant.appendChild(info);
             articleContenant.appendChild(articleTitre);
+            articleContenant.appendChild(articleTrait);
             articleContenant.appendChild(articleDescription);
-        
+
+            info.innerHTML = "Posté par " + nom + " " + prenom;
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
           });
-
-
-
 
         return article;
        
@@ -95,44 +104,15 @@ welcome.innerHTML = "Welcome back " + name ;
       });
   }
 
-  
-  
-    
-      
-
-/*
-
-function getArticles(article) {
-
-    console.log(article);
-   
-    let listeArticle = document.getElementById("NewsFeed");
-
-    article.forEach((article) => {
-
-        let articleContenant = document.createElement("div");
-        let articleTitre = document.createElement("h1");
-        let articleDescription = document.createElement("p");
-    
-        articleContenant.setAttribute("href", "article.html?id=" + article.id);
-        articleTitre.setAttribute("class", "titre-article");
-        articleDescription.setAttribute("class", "description-article");
-        
-        listeArticle.appendChild(articleContenant);
-        articleTitre.appendChild(articleDescription);
-    
-        articleTitre.innerHTML = article.name;
-        articleDescription.innerHTML = article.description;
-      });
-    }
-    */
-
 
 
  
 
   
 //////// Supression article /////////
+
+
+
 
 
 

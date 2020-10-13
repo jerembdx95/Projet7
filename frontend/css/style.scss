@@ -6,6 +6,7 @@
 
 body{
     background-color: #f0f2f5;
+    
 }
 
 /* Login page */
@@ -112,7 +113,6 @@ img{
 
 #accueil{
     background-color: #f0f2f5;
-    
 }
 
 .profil{
@@ -133,6 +133,7 @@ img{
 #header_menu{
         display: flex;
         flex-direction: row;
+        cursor:  pointer;
         li{
             margin-left: 20px;
             margin-right: 20px;
@@ -141,10 +142,15 @@ img{
             color: #6d071a;
             font-weight: bold;
             text-decoration: none;
+            transform: scale(1);
             &:hover {
-                font-size: 20px;
-
+               
+                transform: scale(1.3);
             }
+        }
+        a{
+            text-decoration: none;
+            color: #6d071a;
         }
 }
 
@@ -152,8 +158,9 @@ footer{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    position: absolute; bottom: 0;
+    box-shadow: 1px 1px 12px gray;
     background-color: white;
+    
 
     a{
         text-decoration: none;
@@ -167,6 +174,10 @@ footer{
     }
 }
 
+#accueil_footer{
+    margin-top: 70px;
+}
+
 /* Create article */
 
 .signUp-form{
@@ -174,22 +185,88 @@ footer{
 }
 
 .articles{
+   
+    
     margin-top: 50px;
-    display: flex;
-    margin-left: 100px;
+    h1{
+        margin-left: 90px;
+    }
+    p{
+        margin-left: 20px;
+    }
 }
 
-#NewsFeed{
-    margin-left: 80px;
+#NewsFeed{ 
+    
+    width: 400px;
+    margin: auto;
+    padding-top: 50px;
 }
 
-.Create_article{
+#Create_article{
 
   border: 1px solid black;
-  padding: 4px;
+  padding: 14px;
   width: 400px;
- margin-left: 40px;
-
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px gray;
+  background-color: white;
+  h1{
+      padding: 10px;
+      padding-bottom: 20px;
+  }
   }
 
+  .post{
+    border: 1px solid black;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px gray;
+    transform: scale(1);
+    &:hover {
+       
+        transform: scale(1.1);
+    }
+   
+    h1{
+        padding: 15px;
+    }
+    p{
+        padding: 10px;
+        padding-bottom: 10px;
+    }
+    hr{
+        width: 80%;
+        margin: auto;
+    }
+  } 
   
+
+  #bienvenue{
+      margin-top: 10px;
+      margin-left: 5px;
+      color:  #1da1f2;
+      font-weight: bold;
+      font-size: 20px;
+  }
+
+  .info {
+      font-style: italic;
+      font-size: 14px;
+  }
+
+  #signup_button1 {
+    width: 100%;
+    padding: 15px;
+    background-color: #7dcd6c;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    &:hover {
+        opacity: 0.8;
+    }
+}
