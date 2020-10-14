@@ -5,18 +5,16 @@ exports.createArticle = (req, res, next) => {
   console.log(req)
   const name = req.body.titre;
   const description = req.body.description;
- 
-console.log("test")
+
   const queryString = "INSERT INTO Articles (name, description) VALUES (?, ?)";
   const inserts = [name, description];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {
-    
     if(error)
     {
         return res.status(500).json({ error: "mysql" });
     }
-    console.log("test2")
+    
     res.status(201).json({ message: 'Article créé !'});
 });};
 
@@ -82,7 +80,7 @@ exports.updateOneArticle = (req, res, next) => {
 exports.deleteArticle = (req, res, next) => {
   const id = req.params.id;
   const inserts = [id]
-  const queryString = "SELECT name, description, date FROM Articles WHERE id=?";
+  const queryString = "SELECT name, description, id FROM Articles WHERE id=?";
   
 
   connection.query(queryString, inserts, (error, rows, fields) => {

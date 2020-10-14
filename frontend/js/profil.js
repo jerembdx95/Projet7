@@ -1,5 +1,3 @@
-
-
 /////// Affichage Nom //////
 
 let nom = document.getElementById('prenom');

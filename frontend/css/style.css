@@ -91,6 +91,11 @@ img {
   opacity: 0.8;
 }
 
+.signup_button a {
+  text-decoration: none;
+  color: white;
+}
+
 /* Page inscription */
 #inscription {
   margin-left: 0;
@@ -123,7 +128,7 @@ img {
 
 /* Page Principale */
 #accueil {
-  background-color: #f0f2f5;
+  background-color: #d3d8e0;
 }
 
 .profil {
@@ -209,12 +214,10 @@ footer #Copyright {
 }
 
 /* Create article */
-.signUp-form {
-  width: 200px;
-}
-
 .articles {
-  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .articles h1 {
@@ -229,17 +232,30 @@ footer #Copyright {
   width: 400px;
   margin: auto;
   padding-top: 50px;
+  border-left: 1px solid #000;
+  padding-left: 30px;
 }
 
 #Create_article {
   border: 1px solid black;
+  margin-top: 100px;
+  margin-left: 100px;
   padding: 14px;
   width: 400px;
-  margin: auto;
+  height: 320px;
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 15px gray;
           box-shadow: 1px 1px 15px gray;
   background-color: white;
+}
+
+#Create_article input, #Create_article textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  margin-bottom: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #Create_article h1 {
@@ -256,6 +272,12 @@ footer #Copyright {
           box-shadow: 1px 1px 12px gray;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.post .delete {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 .post:hover {
@@ -278,9 +300,9 @@ footer #Copyright {
 }
 
 #bienvenue {
-  margin-top: 10px;
-  margin-left: 5px;
-  color: #1da1f2;
+  margin-top: 50px;
+  margin-left: 100px;
+  font-style: oblique;
   font-weight: bold;
   font-size: 20px;
 }
@@ -303,6 +325,50 @@ footer #Copyright {
 }
 
 #signup_button1:hover {
+  opacity: 0.8;
+}
+
+/* Profil Page */
+#profil {
+  border: 1px solid black;
+  padding: 14px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 15px gray;
+          box-shadow: 1px 1px 15px gray;
+  background-color: white;
+  margin: 0 auto;
+  width: 400px;
+  margin-top: 100px;
+}
+
+#profil p {
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+#profil_footer {
+  position: absolute;
+  bottom: 0;
+}
+
+#body_profil {
+  background: url(/frontend/html/images/empire-state-building-1081929_1920.jpg);
+}
+
+#delete_user {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  background-color: #6d071a;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#delete_user:hover {
   opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */

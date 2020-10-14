@@ -11,7 +11,7 @@ let welcome = document.getElementById('bienvenue');
 var name = localStorage.getItem('name');
 let affichage_welcome = document.createElement("p");
 welcome.appendChild(affichage_welcome);
-welcome.innerHTML = "Welcome back " + name ;
+welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <br> et les partager avec vos collègues ! 👇";
 
 //////// CREATION ARTICLE /////////
 
@@ -21,7 +21,6 @@ welcome.innerHTML = "Welcome back " + name ;
 
    submitArticle.addEventListener('submit', function(e){
     e.preventDefault();
-
     fetch(url + "api/article", {
       method: "POST",
       headers: { Authorization: "Bearer " + localStorage.getItem("token"),
@@ -71,6 +70,7 @@ welcome.innerHTML = "Welcome back " + name ;
     
             let articleContenant = document.createElement("div");
             let info = document.createElement('p')
+            let deleteElement = document.createElement('p')
             let articleTitre = document.createElement("h1");
             let articleTrait = document.createElement("hr")
             let articleDescription = document.createElement("p");
@@ -80,6 +80,7 @@ welcome.innerHTML = "Welcome back " + name ;
             articleContenant.setAttribute("id", article.id)
             articleTitre.setAttribute("class", "titre-article");
             articleDescription.setAttribute("class", "description-article");
+            deleteElement.setAttribute("class", "delete");
             info.setAttribute("class", "info")
 
             let nom = localStorage.getItem('name')
@@ -87,11 +88,13 @@ welcome.innerHTML = "Welcome back " + name ;
             
             listeArticle.appendChild(articleContenant);
             articleContenant.appendChild(info);
+            articleContenant.appendChild(deleteElement);
             articleContenant.appendChild(articleTitre);
             articleContenant.appendChild(articleTrait);
             articleContenant.appendChild(articleDescription);
 
             info.innerHTML = "Posté par " + nom + " " + prenom;
+            deleteElement.innerHTML = "☠️"
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
           });
@@ -110,10 +113,4 @@ welcome.innerHTML = "Welcome back " + name ;
 
   
 //////// Supression article /////////
-
-
-
-
-
-
 

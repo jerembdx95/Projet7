@@ -9,6 +9,7 @@ body{
     
 }
 
+
 /* Login page */
 
 img{
@@ -78,6 +79,10 @@ img{
     &:hover {
         opacity: 0.8;
     }
+    a{
+        text-decoration: none;
+        color: white;
+    }
 }
 
 /* Page inscription */
@@ -112,7 +117,7 @@ img{
 /* Page Principale */
 
 #accueil{
-    background-color: #f0f2f5;
+    background-color: #d3d8e0
 }
 
 .profil{
@@ -180,14 +185,11 @@ footer{
 
 /* Create article */
 
-.signUp-form{
-    width: 200px;
-}
 
 .articles{
    
-    
-    margin-top: 50px;
+    display: flex;
+  
     h1{
         margin-left: 90px;
     }
@@ -201,17 +203,31 @@ footer{
     width: 400px;
     margin: auto;
     padding-top: 50px;
+    border-left: 1px solid #000;
+    padding-left: 30px;
+       
 }
 
 #Create_article{
 
   border: 1px solid black;
+  margin-top: 100px;
+  margin-left: 100px;
   padding: 14px;
   width: 400px;
-  margin: auto;
+  height: 320px;
   border-radius: 5px;
   box-shadow: 1px 1px 15px gray;
   background-color: white;
+  input, textarea {
+    width: 100%;
+padding: 15px;
+border: 1px solid #dddddd;
+margin-bottom: 15px;
+box-sizing:border-box;
+    
+  }
+
   h1{
       padding: 10px;
       padding-bottom: 20px;
@@ -225,6 +241,13 @@ footer{
     border-radius: 5px;
     box-shadow: 1px 1px 12px gray;
     transform: scale(1);
+    .delete{
+        
+ position: absolute;
+    top: 0px;
+    right: 0px;
+       
+    }
     &:hover {
        
         transform: scale(1.1);
@@ -245,9 +268,9 @@ footer{
   
 
   #bienvenue{
-      margin-top: 10px;
-      margin-left: 5px;
-      color:  #1da1f2;
+      margin-top: 50px;
+      margin-left: 100px;
+      font-style: oblique;
       font-weight: bold;
       font-size: 20px;
   }
@@ -269,4 +292,48 @@ footer{
     &:hover {
         opacity: 0.8;
     }
+}
+
+/* Profil Page */
+
+#profil{
+
+    border: 1px solid black;
+    padding: 14px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px gray;
+    background-color: white;
+    margin: 0 auto;
+    width: 400px; 
+    margin-top: 100px;
+
+    p{
+        padding: 10px;
+        padding-bottom: 20px;
+    }
+    }
+
+#profil_footer{  
+    position: absolute; bottom: 0;
+
+}
+
+#body_profil{
+    background: url(/frontend/html/images/empire-state-building-1081929_1920.jpg);
+}
+
+#delete_user{
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    background-color: #6d071a;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    &:hover {
+        opacity: 0.8;
+    }
+
 }
