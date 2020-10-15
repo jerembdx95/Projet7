@@ -118,9 +118,8 @@ commentaireContenant.appendChild(submitCommentaire);
 submitCommentaire.innerHTML = "post"
 commentaire.placeholder= "Donner votre avis"
 
-
-
-
+commentaire.setAttribute("id", "commentaire");
+submitCommentaire.setAttribute("id", "post_commentaire")
 
           });
         }

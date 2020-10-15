@@ -2,11 +2,10 @@
 
 function createCommentaire() {
 
-    let submitCommentaire = document.getElementById("form-commentaire");
+    let submitCommentaire = document.getElementById("post_commentaire");
 
-    submitCommentaire.addEventListener("submit", ($event) => {
-        $event.preventDefault();
-
+    submitCommentaire.addEventListener("click", () => {
+        
     console.log(id);
     fetch(url + "api/commentaire", {
       method: "POST",
@@ -33,3 +32,12 @@ function createCommentaire() {
 
 
   //////// Affichage Commentaires ////////
+
+
+  /*
+   articleSelect = document.getElementsByClassName("post");
+    articleSelect.addEventListener("mouseenter", ($event)=> {
+      $event.preventDefault();
+      console.log(article.id)
+    })
+    */
