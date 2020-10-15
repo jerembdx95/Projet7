@@ -74,6 +74,7 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
         article.forEach((article) => {
     
             let articleContenant = document.createElement("div");
+            let articleLien = document.createElement("a");
             let info = document.createElement('p')
             let id_article = document.createElement('p')
             let deleteElement = document.createElement('p')
@@ -82,6 +83,7 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             let articleDescription = document.createElement("p");
 
             articleContenant.setAttribute("class", "post")
+            articleLien.setAttribute("href", "post.html?id=" + article.id);
             articleContenant.setAttribute("id", article.id)
             articleTitre.setAttribute("class", "titre-article");
             articleDescription.setAttribute("class", "description-article");
@@ -90,11 +92,12 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
 
             listeArticle.appendChild(articleContenant);
             articleContenant.appendChild(info);
-            articleContenant.appendChild(id_article);
-            articleContenant.appendChild(deleteElement);
-            articleContenant.appendChild(articleTitre);
-            articleContenant.appendChild(articleTrait);
-            articleContenant.appendChild(articleDescription);
+            articleContenant.appendChild(articleLien);
+            articleLien.appendChild(id_article);
+            articleLien.appendChild(deleteElement);
+            articleLien.appendChild(articleTitre);
+            articleLien.appendChild(articleTrait);
+            articleLien.appendChild(articleDescription);
 
             info.innerHTML = "Posté par " + article.firstname + " " + article.surname;
             deleteElement.innerHTML = "☠️";
@@ -156,3 +159,5 @@ removeArticle.addEventListener("click", ($event) => {
       console.log(error);
     });
 })}
+
+

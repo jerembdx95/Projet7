@@ -39,7 +39,7 @@ exports.getAllArticles = (req, res, next) => {
 exports.getOneArticle = (req, res, next) => {
   const id = req.params.id;
   const inserts = [id]
-  const queryString = "name, description FROM Articles WHERE id=?";
+  const queryString =  " SELECT id, name, description, firstname, surname FROM Articles WHERE id=?";
 
   connection.query(queryString, inserts, (error, rows, fields) => {
     if(error) { 
