@@ -5,10 +5,12 @@ exports.createArticle = (req, res, next) => {
   console.log(req)
   const name = req.body.titre;
   const description = req.body.description;
-  const user_id = req.body.user_id;
+  const firstname = req.body.firstname;
+  const surname = req.body.surname;
+  
 
-  const queryString = "INSERT INTO Articles (name, description, user_id) VALUES (?, ?, ?)";
-  const inserts = [name, description, user_id];
+  const queryString = "INSERT INTO Articles (name, description, firstname, surname) VALUES (?, ?, ?, ? )";
+  const inserts = [name, description, firstname, surname];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {
     if(error)
@@ -21,7 +23,7 @@ exports.createArticle = (req, res, next) => {
 
 
 exports.getAllArticles = (req, res, next) => {
-  const queryString = "SELECT id, name, description, user_id FROM Articles";
+  const queryString = "SELECT id, name, description, firstname, surname FROM Articles";
   connection.query(queryString, (error, rows, fields) => {
     if(error) { 
         return res.status(500).json({ error: "mysql" });

@@ -29,7 +29,8 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
       body: JSON.stringify({
       titre: document.getElementById("article-nom").value,
       description : document.getElementById("description").value,
-      user_id : localStorage.getItem("id"),
+      firstname : localStorage.getItem("name"),
+      surname : localStorage.getItem("surname"),
       }),
     })
       .then(function (response) {
@@ -98,22 +99,16 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             articleContenant.appendChild(articleTrait);
             articleContenant.appendChild(articleDescription);
 
-            info.innerHTML = "Posté par " + article.user_id;
+            info.innerHTML = "Posté par " + article.firstname + " " + article.surname;
             deleteElement.innerHTML = "☠️";
             id_article.innerHTML = "post n° " + article.id;
 
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
 
-
-  
-
           });
-
-          
         }
         
-      
       })
   
       .catch((error) => {
@@ -124,29 +119,25 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
 
 //////// Supression article /////////
 
-
-function deleteArticle() {
-
- 
-  document.getElementById("delete").addEventListener("click", function() {
-
-    fetch(url + "api/article/" + article.id, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(
-        
-        alert("Article supprimé")
-      )
-      .catch((error) => {
-        console.log(error);
-      });
-
+function deleteArticle (){  
+removeArticle = document.getElementById("delete")
+removeArticle.addEventListener("click", ($event) => {
+  $event.preventDefault();
+  
+  fetch(url + "api/article/" + article.id, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
   })
-  }
+    .then(function (response) {
+      return response.json();
+    })
+    .then(
+      alert("Article supprimé")
+    )
+    .catch((error) => {
+      console.log(error);
+    });
+})}
