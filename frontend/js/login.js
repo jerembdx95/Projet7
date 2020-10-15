@@ -28,7 +28,7 @@ function loginUser() {
         localStorage.setItem("token", userData.token);
         localStorage.setItem("name", userData.firstname);
         localStorage.setItem("surname", userData.lastname);
-        localStorage.setItem("email", userData.password);
+        localStorage.setItem("email", document.getElementById("email-login").value);
 
         console.log(userData.token);
         let appUrl = "../html/accueil.html?userId=" + userData.id;

@@ -274,7 +274,7 @@ footer #Copyright {
           transform: scale(1);
 }
 
-.post .delete {
+.post #delete {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -300,7 +300,7 @@ footer #Copyright {
 }
 
 #bienvenue {
-  margin-top: 50px;
+  margin-top: 25px;
   margin-left: 100px;
   font-style: oblique;
   font-weight: bold;

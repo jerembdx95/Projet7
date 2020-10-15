@@ -99,7 +99,6 @@ img{
     }
 }
 
-
 #Form{
     width: 400px;
     margin-left: 40px;
@@ -241,7 +240,7 @@ box-sizing:border-box;
     border-radius: 5px;
     box-shadow: 1px 1px 12px gray;
     transform: scale(1);
-    .delete{
+    #delete{
         
  position: absolute;
     top: 0px;
@@ -268,12 +267,13 @@ box-sizing:border-box;
   
 
   #bienvenue{
-      margin-top: 50px;
+      margin-top: 25px;
       margin-left: 100px;
       font-style: oblique;
       font-weight: bold;
       font-size: 20px;
   }
+  
 
   .info {
       font-style: italic;

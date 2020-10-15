@@ -5,9 +5,13 @@ exports.createArticle = (req, res, next) => {
   console.log(req)
   const name = req.body.titre;
   const description = req.body.description;
+  const user_id = req.body.user_id;
+  const id_post = req.body.id_post
 
-  const queryString = "INSERT INTO Articles (name, description) VALUES (?, ?)";
-  const inserts = [name, description];
+  
+ 
+  const queryString = "INSERT INTO Articles (name, description, user_id, id_post) VALUES (?, ?, ?, ?)";
+  const inserts = [name, description, user_id, id_post];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {
     if(error)
@@ -21,7 +25,7 @@ exports.createArticle = (req, res, next) => {
 
 
 exports.getAllArticles = (req, res, next) => {
-  const queryString = "SELECT name, description FROM Articles";
+  const queryString = "SELECT name, description, user_id, id_post FROM Articles";
   connection.query(queryString, (error, rows, fields) => {
     if(error) { 
         return res.status(500).json({ error: "mysql" });
@@ -37,7 +41,7 @@ exports.getAllArticles = (req, res, next) => {
 exports.getOneArticle = (req, res, next) => {
   const id = req.params.id;
   const inserts = [id]
-  const queryString = "SELECT name,  description  FROM Articles WHERE id=?";
+  const queryString = "name, description FROM Articles WHERE id=?";
 
   connection.query(queryString, inserts, (error, rows, fields) => {
     if(error) { 
@@ -58,10 +62,11 @@ exports.getOneArticle = (req, res, next) => {
 exports.updateOneArticle = (req, res, next) => {
   const id = req.params.id;
   
-  const article_name = req.body.article_name;
-  const article_description = req.body.article_description;
-  const queryString = "UPDATE Articles SET name = ?, description = ?, WHERE id = ?";
-  const inserts = [article_name, article_description, id];
+  const name = req.body.name;
+  const description = req.body.description;
+  
+  const queryString = "UPDATE Articles SET name = ?, description = ?  WHERE id = ?";
+  const inserts = [name, description];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {
     
@@ -76,11 +81,28 @@ exports.updateOneArticle = (req, res, next) => {
 );
 };
 
+/*
+exports.deleteArticle = (req, res, next) => {
+  const id = req.params.id;
+  const queryString = "DELETE FROM Articles WHERE id=?"
+  const inserts = [id];
+  connection.query(queryString, inserts, (error, rows, fields) => {
+    if(error) {
+        return res.status(500).json({ error: "mysql" });
+    }
+    else {
+      
+        return res.status(200).json({ message: "Article supprimé !"});
+    };
+  })
+
+}
+*/
 
 exports.deleteArticle = (req, res, next) => {
   const id = req.params.id;
   const inserts = [id]
-  const queryString = "SELECT name, description, id FROM Articles WHERE id=?";
+  const queryString = "SELECT  name, description,  user_id, id_post  FROM Articles WHERE id=?";
   
 
   connection.query(queryString, inserts, (error, rows, fields) => {
@@ -107,4 +129,3 @@ exports.deleteArticle = (req, res, next) => {
 }
 })
 }
-
