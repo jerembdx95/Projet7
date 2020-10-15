@@ -85,7 +85,7 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             articleContenant.setAttribute("id", article.id)
             articleTitre.setAttribute("class", "titre-article");
             articleDescription.setAttribute("class", "description-article");
-            deleteElement.setAttribute("id", "delete");
+            deleteElement.setAttribute("class", "delete");
             info.setAttribute("class", "info")
 
             listeArticle.appendChild(articleContenant);
@@ -135,7 +135,7 @@ submitCommentaire.setAttribute("id", "post_commentaire")
 //////// Supression article /////////
 
 function deleteArticle (){  
-removeArticle = document.getElementById("delete")
+removeArticle = document.getElementsByClassName("delete")
 removeArticle.addEventListener("click", ($event) => {
   $event.preventDefault();
   
