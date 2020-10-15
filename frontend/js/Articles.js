@@ -80,8 +80,7 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             let articleTitre = document.createElement("h1");
             let articleTrait = document.createElement("hr")
             let articleDescription = document.createElement("p");
-            
-      
+
             articleContenant.setAttribute("class", "post")
             articleContenant.setAttribute("id", article.id)
             articleTitre.setAttribute("class", "titre-article");
@@ -89,8 +88,6 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             deleteElement.setAttribute("id", "delete");
             info.setAttribute("class", "info")
 
-            
-            
             listeArticle.appendChild(articleContenant);
             articleContenant.appendChild(info);
             articleContenant.appendChild(id_article);
@@ -105,6 +102,25 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
 
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
+
+
+//* commentaire *//
+
+
+let commentaireContenant = document.createElement("div");
+let commentaire  = document.createElement('textarea');
+let submitCommentaire = document.createElement('button');
+
+articleContenant.appendChild(commentaireContenant);
+commentaireContenant.appendChild(commentaire);
+commentaireContenant.appendChild(submitCommentaire);
+
+submitCommentaire.innerHTML = "post"
+commentaire.placeholder= "Donner votre avis"
+
+
+
+
 
           });
         }
