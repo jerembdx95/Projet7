@@ -6,12 +6,9 @@ exports.createArticle = (req, res, next) => {
   const name = req.body.titre;
   const description = req.body.description;
   const user_id = req.body.user_id;
-  const id_post = req.body.id_post
 
-  
- 
-  const queryString = "INSERT INTO Articles (name, description, user_id, id_post) VALUES (?, ?, ?, ?)";
-  const inserts = [name, description, user_id, id_post];
+  const queryString = "INSERT INTO Articles (name, description, user_id) VALUES (?, ?, ?)";
+  const inserts = [name, description, user_id];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {
     if(error)
@@ -23,9 +20,8 @@ exports.createArticle = (req, res, next) => {
 });};
 
 
-
 exports.getAllArticles = (req, res, next) => {
-  const queryString = "SELECT name, description, user_id, id_post FROM Articles";
+  const queryString = "SELECT id, name, description, user_id FROM Articles";
   connection.query(queryString, (error, rows, fields) => {
     if(error) { 
         return res.status(500).json({ error: "mysql" });
@@ -81,7 +77,7 @@ exports.updateOneArticle = (req, res, next) => {
 );
 };
 
-/*
+
 exports.deleteArticle = (req, res, next) => {
   const id = req.params.id;
   const queryString = "DELETE FROM Articles WHERE id=?"
@@ -97,35 +93,7 @@ exports.deleteArticle = (req, res, next) => {
   })
 
 }
-*/
 
-exports.deleteArticle = (req, res, next) => {
-  const id = req.params.id;
-  const inserts = [id]
-  const queryString = "SELECT  name, description,  user_id, id_post  FROM Articles WHERE id=?";
-  
 
-  connection.query(queryString, inserts, (error, rows, fields) => {
-    if(error) { 
-      return res.status(500).json({ error: "mysql" });
-  }
-  else {
-      if(rows[0]) {const filename = rows[0].article_image_url.split("/images/")[1];
-      fs.unlink(`images/${filename}`, () => {
-  const id = req.params.id;
-  const queryString = "DELETE FROM Articles WHERE id=?"
-  const inserts = [id];
-  connection.query(queryString, inserts, (error, rows, fields) => {
-      if(error) {
-          return res.status(500).json({ error: "mysql" });
-      }
-      else {
-        
-          return res.status(200).json({ message: "Article supprimé !"});
-      };
-    })
-  })
-}
-}
-})
-}
+
+

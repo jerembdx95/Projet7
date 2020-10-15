@@ -4,10 +4,7 @@ let post = [];
 let articles = [];
 let liste_article ;
 
-bla
-////// générer nombre aléatoire //////
 
-Math.floor(Math.random() * 1010); 
 
 /////// Affichage Bienvenue  //////
 
@@ -33,7 +30,6 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
       titre: document.getElementById("article-nom").value,
       description : document.getElementById("description").value,
       user_id : localStorage.getItem("id"),
-      id_post : Math.floor(Math.random() * 1010),
       }),
     })
       .then(function (response) {
@@ -86,7 +82,7 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             
       
             articleContenant.setAttribute("class", "post")
-            articleContenant.setAttribute("id", article.id_post)
+            articleContenant.setAttribute("id", article.id)
             articleTitre.setAttribute("class", "titre-article");
             articleDescription.setAttribute("class", "description-article");
             deleteElement.setAttribute("id", "delete");
@@ -104,18 +100,20 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
 
             info.innerHTML = "Posté par " + article.user_id;
             deleteElement.innerHTML = "☠️";
-            id_article.innerHTML = "post n° " + article.id_post;
+            id_article.innerHTML = "post n° " + article.id;
 
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
 
 
-
+  
 
           });
+
+          
         }
         
-       
+      
       })
   
       .catch((error) => {
@@ -125,15 +123,14 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
 
 
 //////// Supression article /////////
-/*
+
 
 function deleteArticle() {
 
  
   document.getElementById("delete").addEventListener("click", function() {
 
-    idArticle = article.id_post;
-    fetch(url + "api/article/" + idArticle, {
+    fetch(url + "api/article/" + article.id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -153,4 +150,3 @@ function deleteArticle() {
 
   })
   }
-  */
