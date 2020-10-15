@@ -1,21 +1,23 @@
 const connection = require("../db");
 
+
 exports.createCommentaire = (req, res, next) => {
-  const user_id = req.body.user_id;
-  const commentaire = req.body.commentaire;
+  
+  const user = req.body.user;
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
-  const article_id = req.body.message_id;
+  const article_id = req.body.article_id;
+  const commentaire = req.body.commentaire;
+  
 
-  const queryString =
-    "INSERT INTO commentaires (user_id, firstname, lastname, article_id, commentaire) VALUES (?, ?, ?, ?, ?)";
-  const inserts = [user_id, firstname, lastname, article_id, commentaire];
+  const queryString = "INSERT INTO commentaires (user, firstname, lastname, article_id, commentaire) VALUES (?, ?, ?, ?, ?)";
+  const inserts = [user, firstname, lastname, article_id, commentaire];
 
   connection.query(queryString, inserts, (error, rows, fields) => {
     if (error) {
-      return res.status(500).json({ error: "mysql" });
+      return res.status(500).json({ error: "sql" });
     }
-    res.status(201).json({ message: "Commentaire ajouté !" });
+    res.status(201).json({ message: "Commentair ajouté !" });
   });
 };
 

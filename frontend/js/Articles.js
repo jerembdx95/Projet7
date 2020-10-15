@@ -107,22 +107,9 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             articleDescription.innerHTML = article.description;
 
 
-//* commentaire *//
 
 
-let commentaireContenant = document.createElement("div");
-let commentaire  = document.createElement('textarea');
-let submitCommentaire = document.createElement('button');
 
-articleContenant.appendChild(commentaireContenant);
-commentaireContenant.appendChild(commentaire);
-commentaireContenant.appendChild(submitCommentaire);
-
-submitCommentaire.innerHTML = "post"
-commentaire.placeholder= "Donner votre avis"
-
-commentaire.setAttribute("id", "commentaire");
-submitCommentaire.setAttribute("id", "post_commentaire")
 
           });
         }
@@ -135,29 +122,5 @@ submitCommentaire.setAttribute("id", "post_commentaire")
   }
 
 
-//////// Supression article /////////
-
-function deleteArticle (){  
-removeArticle = document.getElementById("delete")
-removeArticle.addEventListener("click", ($event) => {
-  $event.preventDefault();
-  
-  fetch(url + "api/article/" + article.id, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("token"),
-    },
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(
-      alert("Article supprimé")
-    )
-    .catch((error) => {
-      console.log(error);
-    });
-})}
 
 

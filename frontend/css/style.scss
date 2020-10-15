@@ -247,10 +247,9 @@ box-sizing:border-box;
     right: 0px;
        
     }
-    &:hover {
-       
-        transform: scale(1.1);
-    }
+   
+}
+   
    
     h1{
         padding: 15px;
@@ -263,7 +262,7 @@ box-sizing:border-box;
         width: 80%;
         margin: auto;
     }
-  } 
+  
   
 
   #bienvenue{
@@ -337,3 +336,21 @@ box-sizing:border-box;
     }
 
 }
+
+.post_page{
+    border: 1px solid black;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px gray;
+    transform: scale(1);
+    #delete{
+        
+ position: absolute;
+    top: 0px;
+    right: 0px;
+       
+    }
+
+}
+   

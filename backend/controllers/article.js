@@ -9,7 +9,7 @@ exports.createArticle = (req, res, next) => {
   const surname = req.body.surname;
   
 
-  const queryString = "INSERT INTO Articles (name, description, firstname, surname) VALUES (?, ?, ?, ? )";
+  const queryString = "INSERT INTO Articles (name, description, firstname, surname) VALUES (?, ?, ?, ?)";
   const inserts = [name, description, firstname, surname];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {

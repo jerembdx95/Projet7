@@ -280,21 +280,16 @@ footer #Copyright {
   right: 0px;
 }
 
-.post:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.post h1 {
+h1 {
   padding: 15px;
 }
 
-.post p {
+p {
   padding: 10px;
   padding-bottom: 10px;
 }
 
-.post hr {
+hr {
   width: 80%;
   margin: auto;
 }
@@ -370,5 +365,22 @@ footer #Copyright {
 
 #delete_user:hover {
   opacity: 0.8;
+}
+
+.post_page {
+  border: 1px solid black;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 12px gray;
+          box-shadow: 1px 1px 12px gray;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.post_page #delete {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 /*# sourceMappingURL=style.css.map */
