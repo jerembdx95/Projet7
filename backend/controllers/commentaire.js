@@ -5,11 +5,11 @@ exports.createCommentaire = (req, res, next) => {
   const commentaire = req.body.commentaire;
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
-  const article_id = req.body.message_id;
+  const article_id = req.body.article_id;
 
   const queryString =
-    "INSERT INTO commentaires (user_id, firstname, lastname, article_id, commentaire) VALUES (?, ?, ?, ?, ?)";
-  const inserts = [user_id, firstname, lastname, article_id, commentaire];
+    "INSERT INTO commentaires (user_id, commentaire, firstname, lastname, article_id) VALUES (?, ?, ?, ?, ?)";
+  const inserts = [user_id, commentaire, firstname, lastname, article_id];
 
   connection.query(queryString, inserts, (error, rows, fields) => {
     if (error) {

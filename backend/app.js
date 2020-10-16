@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const userRoutes = require("./routes/user");
 const profilRoutes = require("./routes/profil");
 const articleRoutes = require("./routes/article");
+const commentaireRoutes = require("./routes/commentaire");
 
 
 const app = express();
@@ -29,6 +30,7 @@ app.use(bodyParser.json());
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/api/auth", userRoutes);
+app.use("/api/commentaire", commentaireRoutes);
 app.use("/api/profil", profilRoutes);
 app.use("/api/article", articleRoutes);
 

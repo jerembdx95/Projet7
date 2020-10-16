@@ -2,42 +2,35 @@
 
 function createCommentaire() {
 
-    let submitCommentaire = document.getElementById("post_commentaire");
+    let submitCommentaire = document.getElementById("add");
 
     submitCommentaire.addEventListener("click", () => {
         
-    console.log(id);
-    fetch(url + "api/commentaire", {
-      method: "POST",
-      headers: { Authorization: "Bearer " + localStorage.getItem("token"), },
-      body: JSON.stringify({
-        firstname: localStorage.getItem("name"),
-        lastname : localStorage.getItem("surname"),
-        commentaire : document.getElementById("commentaire").value,
-        article_id : "",
-        }),
-    })
-      .then(function (response) {
-        return response.json();
+   
+      fetch(url + "api/commentaire", {
+        method: "POST",
+        headers: { Authorization: "Bearer " + localStorage.getItem("token"), },
+        body: JSON.stringify({
+          user_id : localStorage.getItem("id"),
+          commentaire : document.getElementById("commentaire").value,
+          firstname: localStorage.getItem("name"),
+          lastname : localStorage.getItem("surname"),
+          article_id : localStorage.getItem("idArticle"),
+          
+          }),
       })
-      .then(
-        location.reload(),
-        alert("Commentaire ajouté")
-      )
-      .catch((error) => {
-        console.log(error);
-      });
+        .then(function (response) {
+          return response.json();
+        })
+        .then(
+          location.reload(),
+          alert("Commentaire ajouté")
+        )
+        .catch((error) => {
+          console.log(error);
+        });
   }
   )}
 
 
-  //////// Affichage Commentaires ////////
-
-
-  /*
-   articleSelect = document.getElementsByClassName("post");
-    articleSelect.addEventListener("mouseenter", ($event)=> {
-      $event.preventDefault();
-      console.log(article.id)
-    })
-    */
+  
