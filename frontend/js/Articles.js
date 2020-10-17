@@ -1,10 +1,8 @@
 let url = "http://localhost:3000/";
 let produit;
-let post = [];
+
 let articles = [];
 let liste_article ;
-
-
 
 /////// Affichage Bienvenue  //////
 
@@ -61,7 +59,7 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
       },
     })
       .then(function (response) {
-        article = post;
+        
         return response.json();
       })
       .then(function (article) {
@@ -154,20 +152,65 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
 
 let commentaireContenant = document.createElement("div");
 let commentaire  = document.createElement('textarea');
-let submitContenant = document.createElement('div');
 let submitCommentaire = document.createElement('button');
 
 articleContenant.appendChild(commentaireContenant);
 commentaireContenant.appendChild(commentaire);
-articleContenant.appendChild(submitContenant);
-submitContenant.appendChild(submitCommentaire);
+articleContenant.appendChild(submitCommentaire);
 
 submitCommentaire.innerHTML = "post"
 commentaire.placeholder= "Donner votre avis"
 
 commentaire.setAttribute("id", "commentaire");
-submitContenant.setAttribute("class", "submitContenant")
 submitCommentaire.setAttribute("id", "post_commentaire")
+
+
+////////////* création commentaire *////////////
+
+submitCommentaire.addEventListener("click", () => {
+   
+  
+  fetch(url + "api/commentaire", {
+    method: "POST",
+    headers: { Authorization: "Bearer " + localStorage.getItem("token"), },
+    body: JSON.stringify({
+      user_id : localStorage.getItem("id"),
+      commentaire : document.getElementById("commentaire").value,
+      firstname: localStorage.getItem("name"),
+      lastname : localStorage.getItem("surname"),
+      article_id : localStorage.getItem("idArticle"),
+      
+      }),
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(
+      location.reload(),
+      alert("Commentaire ajouté")
+    )
+    .catch((error) => {
+      console.log(error);
+    });
+
+});
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////
+
+
+
 
           });
         }
