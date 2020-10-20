@@ -10,7 +10,7 @@ let welcome = document.getElementById('bienvenue');
 var name = localStorage.getItem('name');
 let affichage_welcome = document.createElement("p");
 welcome.appendChild(affichage_welcome);
-welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <br> et les partager avec vos collègues ! 👇";
+welcome.innerHTML = "Bonjour " + name + "🏠" ;
 
 //////// CREATION ARTICLE /////////
 
@@ -69,16 +69,25 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
 
         let listeArticle = document.getElementById("NewsFeed");
 
+
+        let Erreur = document.getElementById("zero_news");
+        Erreur.innerHTML = "";
+
+        let titre_session = document.createElement("h1");
+        listeArticle.appendChild(titre_session);
+        titre_session.innerHTML = "Actualités 🌎";
+       
+
         article.forEach((article) => {
     
             let articleContenant = document.createElement("div");
             let info = document.createElement('p')
-            let id_article = document.createElement('p')
             let deleteContenant = document.createElement('div')
             let deleteElement = document.createElement('p')
             let articleTitre = document.createElement("h1");
-            let articleTrait = document.createElement("hr")
+            let articleTrait = document.createElement("hr");
             let articleDescription = document.createElement("p");
+            let commentaireTrait = document.createElement("hr");
 
             articleContenant.setAttribute("class", "post")
             articleContenant.setAttribute("id", article.id)
@@ -87,20 +96,22 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
             deleteElement.setAttribute("id", "delete");
             info.setAttribute("class", "info");
             deleteContenant.setAttribute("class", "delete_contenant");
+            commentaireTrait.setAttribute("id", "trait_separation");
+            titre_session.setAttribute("id", "titre_session")
 
+           
             listeArticle.appendChild(articleContenant);
             articleContenant.appendChild(info);
-            articleContenant.appendChild(id_article);
             articleContenant.appendChild(deleteContenant);
             deleteContenant.appendChild(deleteElement)
             articleContenant.appendChild(articleTitre);
             articleContenant.appendChild(articleTrait);
             articleContenant.appendChild(articleDescription);
+            articleContenant.appendChild(commentaireTrait);
 
-            info.innerHTML = "Posté par " + article.firstname + " " + article.surname;
-            deleteElement.innerHTML = "☠️";
-            id_article.innerHTML = "post n° " + article.id;
-
+            
+            info.innerHTML = "Posté par " + article.firstname + " " + article.surname + " ✉️";
+            deleteElement.innerHTML = "❌";
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
 
@@ -143,9 +154,6 @@ welcome.innerHTML = "Bonjour " + name  + " ici vous pouvez créer vos articles <
       });
   
     })
-  
-
-
 
 //* commentaire text aréa *//
 
@@ -158,7 +166,7 @@ articleContenant.appendChild(commentaireContenant);
 commentaireContenant.appendChild(commentaire);
 articleContenant.appendChild(submitCommentaire);
 
-submitCommentaire.innerHTML = "post"
+submitCommentaire.innerHTML = "Post"
 commentaire.placeholder= "Donner votre avis"
 
 commentaire.setAttribute("id", "commentaire");
@@ -195,18 +203,6 @@ submitCommentaire.addEventListener("click", () => {
 
 });
     
-  
-
-
-
-
-
-
-
-
-
-
-
 ///////////////////////////////////////////////////////////
 
 
@@ -214,7 +210,7 @@ submitCommentaire.addEventListener("click", () => {
 
           });
         }
-        
+
       })
   
       .catch((error) => {

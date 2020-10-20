@@ -7,8 +7,7 @@ exports.createCommentaire = (req, res, next) => {
   const lastname = req.body.lastname;
   const article_id = req.body.article_id;
 
-  const queryString =
-    "INSERT INTO commentaires (user_id, commentaire, firstname, lastname, article_id) VALUES (?, ?, ?, ?, ?)";
+  const queryString = "INSERT INTO Commentaires (user_id, firstname, lastname, article_id, commentaire,) VALUES (?, ?, ?, ?, ? )";
   const inserts = [user_id, commentaire, firstname, lastname, article_id];
 
   connection.query(queryString, inserts, (error, rows, fields) => {

@@ -214,35 +214,24 @@ footer #Copyright {
 }
 
 /* Create article */
-.articles {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.articles h1 {
-  margin-left: 90px;
-}
-
 .articles p {
   margin-left: 20px;
 }
 
 #NewsFeed {
-  width: 400px;
   margin: auto;
   padding-top: 50px;
-  border-left: 1px solid #000;
   padding-left: 30px;
+  width: 60%;
 }
 
 #Create_article {
   border: 1px solid black;
-  margin-top: 100px;
-  margin-left: 100px;
-  padding: 14px;
-  width: 400px;
-  height: 320px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  margin-top: 50px;
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 15px gray;
           box-shadow: 1px 1px 15px gray;
@@ -259,8 +248,8 @@ footer #Copyright {
 }
 
 #Create_article h1 {
-  padding: 10px;
-  padding-bottom: 20px;
+  text-align: center;
+  margin-left: -10px;
 }
 
 .post {
@@ -275,14 +264,15 @@ footer #Copyright {
 }
 
 .post #delete {
+  cursor: pointer;
   position: absolute;
   top: 0px;
   right: 0px;
 }
 
 .post:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .post h1 {
@@ -299,12 +289,24 @@ footer #Copyright {
   margin: auto;
 }
 
+#article-nom {
+  margin-top: 12px;
+}
+
 #bienvenue {
-  margin-top: 25px;
-  margin-left: 100px;
+  text-align: left;
   font-style: oblique;
   font-weight: bold;
   font-size: 20px;
+  margin-top: 15px;
+}
+
+.titre-article {
+  text-align: center;
+}
+
+#titre_feed {
+  text-align: center;
 }
 
 .info {
@@ -326,6 +328,46 @@ footer #Copyright {
 
 #signup_button1:hover {
   opacity: 0.8;
+}
+
+#separation {
+  width: 85%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+#trait_separation {
+  margin-bottom: 10px;
+}
+
+#zero_news {
+  text-align: center;
+}
+
+#titre_session {
+  text-align: center;
+}
+
+#post_commentaire {
+  width: 100%;
+  padding: 15px;
+  background-color: #1da1f2;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#post_commentaire:hover {
+  opacity: 0.8;
+}
+
+#commentaire {
+  width: 99%;
+  margin-left: 0.5%;
+  border: 1px solid #dddddd;
 }
 
 /* Profil Page */
