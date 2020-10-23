@@ -321,7 +321,7 @@ text-align: center;
 }
 
 
-
+////////* Commentaire */////////////
 
 
 #post_commentaire{ 
@@ -344,7 +344,26 @@ color: #ffffff;
     margin-left: 0.5%;
     border: 1px solid #dddddd;}
 
+.detail_commentaire{
+    background-color: white;
+    
+    p{
+        color: black;
+    }
+}
 
+.delete_commentaire{
+    float: right;
+    cursor: pointer;
+}
+
+.name_commentaire{
+    font-weight: bold;
+    
+}
+.commentaire_contenant{
+    border: 1px solid black;
+}
 
 /* Profil Page */
 

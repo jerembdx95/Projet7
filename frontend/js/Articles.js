@@ -171,6 +171,7 @@ commentaire.placeholder= "Donner votre avis"
 
 commentaire.setAttribute("id", "commentaire");
 submitCommentaire.setAttribute("id", "post_commentaire")
+commentaireContenant.setAttribute("id", "advice")
 
 
 ////////////* création commentaire *////////////
@@ -180,7 +181,8 @@ submitCommentaire.addEventListener("click", () => {
   
   fetch(url + "api/commentaire", {
     method: "POST",
-    headers: { Authorization: "Bearer " + localStorage.getItem("token"), },
+    headers: { Authorization: "Bearer " + localStorage.getItem("token"), 
+    "Content-Type": "application/json"},
     body: JSON.stringify({
       user_id : localStorage.getItem("id"),
       commentaire : document.getElementById("commentaire").value,

@@ -370,6 +370,27 @@ footer #Copyright {
   border: 1px solid #dddddd;
 }
 
+.detail_commentaire {
+  background-color: white;
+}
+
+.detail_commentaire p {
+  color: black;
+}
+
+.delete_commentaire {
+  float: right;
+  cursor: pointer;
+}
+
+.name_commentaire {
+  font-weight: bold;
+}
+
+.commentaire_contenant {
+  border: 1px solid black;
+}
+
 /* Profil Page */
 #profil {
   border: 1px solid black;
