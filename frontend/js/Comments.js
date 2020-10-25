@@ -13,9 +13,10 @@ function getAllCommentaires() {
     })
     .then(function (commentaire) {
       console.log(commentaire);
-      
 
-      commentaire.forEach ( (commentaire) => {
+      let listeCommentaire= document.querySelector(".post")
+     
+      commentaire.filter(function(commentaire) {return commentaire.article_id == listeCommentaire.id}).forEach ( (commentaire) => {
   
         let listeCommentaire= document.querySelector(".post")
     
@@ -46,15 +47,14 @@ commentaireContenant.addEventListener("mouseenter", () =>{
 })
 commentaireContenant.addEventListener("mouseleave", () =>{
   localStorage.removeItem("idCommentaire")
-  
 })
 
 ////////// Delete Commentaire //////////
 
 let removeCommentaire= document.querySelector(".delete_commentaire");
 
-removeCommentaire.addEventListener("click", ($event) => {
-  $event.preventDefault();
+removeCommentaire.addEventListener("click", () => {
+ 
   
   fetch(url + "api/commentaire/" + localStorage.getItem("idCommentaire"), {
     method: "DELETE",
@@ -68,7 +68,6 @@ removeCommentaire.addEventListener("click", ($event) => {
     })
     .then(
       location.reload(),
-      alert("Commentaire supprimé")
     )
     .catch((error) => {
       console.log(error);
