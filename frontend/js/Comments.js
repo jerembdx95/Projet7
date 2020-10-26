@@ -1,3 +1,12 @@
+let submitCommentaire = document.getElementsByClassName("post_commentaire");
+
+////////////* création commentaire *////////////
+
+
+
+  
+
+
 ////////////////* Affichage Commentaire *////////////////
 
 function getAllCommentaires() {

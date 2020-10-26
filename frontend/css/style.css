@@ -348,7 +348,7 @@ footer #Copyright {
   text-align: center;
 }
 
-#post_commentaire {
+.post_commentaire {
   width: 100%;
   padding: 15px;
   background-color: #1da1f2;
@@ -360,7 +360,7 @@ footer #Copyright {
   color: #ffffff;
 }
 
-#post_commentaire:hover {
+.post_commentaire:hover {
   opacity: 0.8;
 }
 

@@ -69,7 +69,6 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
 
         let listeArticle = document.getElementById("NewsFeed");
 
-
         let Erreur = document.getElementById("zero_news");
         Erreur.innerHTML = "";
 
@@ -77,7 +76,6 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
         listeArticle.appendChild(titre_session);
         titre_session.innerHTML = "Actualités 🌎";
        
-
         article.forEach((article) => {
     
             let articleContenant = document.createElement("div");
@@ -99,7 +97,6 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
             commentaireTrait.setAttribute("id", "trait_separation");
             titre_session.setAttribute("id", "titre_session")
 
-           
             listeArticle.appendChild(articleContenant);
             articleContenant.appendChild(info);
             articleContenant.appendChild(deleteContenant);
@@ -109,12 +106,10 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
             articleContenant.appendChild(articleDescription);
             articleContenant.appendChild(commentaireTrait);
 
-            
             info.innerHTML = "Posté par " + article.firstname + " " + article.surname + " ✉️";
             deleteElement.innerHTML = "❌";
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
-
 
             ///* ajout id ////
 
@@ -170,26 +165,25 @@ submitCommentaire.innerHTML = "Post"
 commentaire.placeholder= "Donner votre avis"
 
 commentaire.setAttribute("id", "commentaire");
-submitCommentaire.setAttribute("id", "post_commentaire")
+submitCommentaire.setAttribute("class", "post_commentaire")
 commentaireContenant.setAttribute("id", "advice")
 
 
-////////////* création commentaire *////////////
+//////////////* Création commentaire */////////////
 
-submitCommentaire.addEventListener("click", () => {
+submitCommentaire.addEventListener("click", ($event) => {
+  $event.preventDefault();
    
-  
   fetch(url + "api/commentaire", {
     method: "POST",
     headers: { Authorization: "Bearer " + localStorage.getItem("token"), 
     "Content-Type": "application/json"},
     body: JSON.stringify({
-      user_id : localStorage.getItem("id"),
+      user_id :     localStorage.getItem("id"),
       commentaire : document.getElementById("commentaire").value,
-      firstname: localStorage.getItem("name"),
-      lastname : localStorage.getItem("surname"),
-      article_id : localStorage.getItem("idArticle"),
-      
+      firstname:    localStorage.getItem("name"),
+      lastname :    localStorage.getItem("surname"),
+      article_id :  localStorage.getItem("idArticle"),
       }),
   })
     .then(function (response) {
@@ -204,8 +198,16 @@ submitCommentaire.addEventListener("click", () => {
     });
 
 });
-    
-///////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
 
 
 
