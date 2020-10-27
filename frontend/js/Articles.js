@@ -171,6 +171,7 @@ commentaireContenant.setAttribute("id", "advice")
 
 //////////////* Création commentaire */////////////
 
+
 submitCommentaire.addEventListener("click", ($event) => {
   $event.preventDefault();
    
