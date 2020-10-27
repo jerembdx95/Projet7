@@ -40,12 +40,7 @@ id.appendChild(affichage_id);
 
 id.innerHTML = "Id User :  " + id_profil ;
 
-
-
-
-
 /////// Delete User ///////
-
 
 function deleteUser() {
 

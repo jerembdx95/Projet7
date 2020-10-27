@@ -124,8 +124,8 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
 
             //////// Supression article /////////
 
-          
-  deleteElement.addEventListener("click", ($event) => {
+    
+    deleteElement.addEventListener("click", ($event) => {
     $event.preventDefault();
     
     fetch(url + "api/article/" + localStorage.getItem("idArticle"), {
@@ -138,11 +138,10 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
       .then(function (response) {
         location.reload();
         return response.json();
-        
-        
+
       })
       .then(
-        alert("Article supprimé")
+        alert("Commentaire supprimée")
       )
       .catch((error) => {
         console.log(error);
@@ -199,19 +198,6 @@ submitCommentaire.addEventListener("click", ($event) => {
     });
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           });
         }
