@@ -124,7 +124,6 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
 
             //////// Supression article /////////
 
-    
     deleteElement.addEventListener("click", ($event) => {
     $event.preventDefault();
     
@@ -151,7 +150,6 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
 
 //* commentaire text aréa *//
 
-
 let commentaireContenant = document.createElement("div");
 let commentaire  = document.createElement('textarea');
 let submitCommentaire = document.createElement('button');
@@ -171,16 +169,18 @@ commentaireContenant.setAttribute("id", "advice")
 //////////////* Création commentaire */////////////
 
 
-submitCommentaire.addEventListener("click", ($event) => {
+  submitCommentaire.addEventListener("click", ($event) => {
   $event.preventDefault();
-   
+
+  for (i=0 ; i< document.querySelectorAll("#commentaire").length; i++) {  
+
   fetch(url + "api/commentaire", {
     method: "POST",
     headers: { Authorization: "Bearer " + localStorage.getItem("token"), 
     "Content-Type": "application/json"},
     body: JSON.stringify({
       user_id :     localStorage.getItem("id"),
-      commentaire : document.getElementById("commentaire").value,
+      commentaire : document.querySelectorAll("#commentaire")[i].value,
       firstname:    localStorage.getItem("name"),
       lastname :    localStorage.getItem("surname"),
       article_id :  localStorage.getItem("idArticle"),
@@ -191,14 +191,17 @@ submitCommentaire.addEventListener("click", ($event) => {
     })
     .then(
       location.reload(),
-      alert("Commentaire ajouté")
     )
     .catch((error) => {
       console.log(error);
-    });
+    
+  
+  });
+    
+ }
 
-});
-          });
+})});
+
         }
       })
 
