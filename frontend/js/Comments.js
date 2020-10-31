@@ -52,7 +52,16 @@ commentaireContenant.addEventListener("mouseenter", () =>{
 commentaireContenant.addEventListener("mouseleave", () =>{
   localStorage.removeItem("idCommentaire")
 })
+  }); 
+}})}
 
+
+
+
+
+
+
+/*
 ////////// Delete Commentaire //////////
 
 let removeCommentaire= document.querySelectorAll(".delete_commentaire");
@@ -86,7 +95,7 @@ removeCommentaire[i].addEventListener("click", () => {
     }
 
       
-     
+     */
       
 
 

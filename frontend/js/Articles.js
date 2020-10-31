@@ -192,6 +192,7 @@ commentaireContenant.setAttribute("id", "advice")
     })
     .then(
       location.reload(),
+      
     )
     .catch((error) => {
       console.log(error);
