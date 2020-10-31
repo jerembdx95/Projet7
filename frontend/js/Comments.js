@@ -1,4 +1,5 @@
 let submitCommentaire = document.getElementsByClassName("post_commentaire");
+let idCommentaire;
 
 ////////////////* Affichage Commentaire *////////////////
 
@@ -16,34 +17,37 @@ function getAllCommentaires() {
     .then(function (commentaire) {
       console.log(commentaire);
 
-      commentaire.forEach ( (commentaire) => {
-  
-        let listeCommentaire= document.querySelector(".post")
-    
-        let commentaireContenant = document.createElement("div");
-        let commentaireDelete = document.createElement("p")
-        let commentaireAuteur = document.createElement("p");
-        let commentaireText = document.createElement("p");
- 
-        listeCommentaire.appendChild(commentaireContenant);
-        commentaireContenant.appendChild(commentaireDelete);
-        commentaireContenant.appendChild(commentaireAuteur);
-        commentaireContenant.appendChild(commentaireText);
+      for (i=0; i<document.querySelectorAll(".post").length; i++){ 
 
-        commentaireContenant.setAttribute("class", "detail_commentaire");
-        commentaireDelete.setAttribute("class", "delete_commentaire");
-        commentaireAuteur.setAttribute("class", "name_commentaire");
-        commentaireContenant.setAttribute("class", "commentaire_contenant")
+let idArticle = document.querySelectorAll(".post")[i].id;
+      
+commentaire.filter(function(commentaire) {return commentaire.article_id==idArticle}).forEach((commentaire) =>{ 
 
-        commentaireDelete.innerHTML = "🚫";
-        commentaireText.innerHTML= commentaire.commentaire;
-        commentaireAuteur.innerHTML = commentaire.firstname + " " + commentaire.lastname;
+  let listeCommentaire= document.querySelectorAll(".post")[i];
 
-///* ajout id Commentaire ////
+  let commentaireContenant = document.createElement("div");
+  let commentaireDelete = document.createElement("p")
+  let commentaireAuteur = document.createElement("p");
+  let commentaireText = document.createElement("p");
+
+  listeCommentaire.appendChild(commentaireContenant);
+  commentaireContenant.appendChild(commentaireDelete);
+  commentaireContenant.appendChild(commentaireAuteur);
+  commentaireContenant.appendChild(commentaireText);
+
+  commentaireContenant.setAttribute("class", "detail_commentaire");
+  commentaireDelete.setAttribute("class", "delete_commentaire");
+  commentaireAuteur.setAttribute("class", "name_commentaire");
+  commentaireContenant.setAttribute("class", "commentaire_contenant")
+
+  commentaireDelete.innerHTML = "🚫";
+  commentaireText.innerHTML= commentaire.commentaire;
+  commentaireAuteur.innerHTML = commentaire.firstname + " " + commentaire.lastname;
+
+  ///* ajout id Commentaire ////
 
 commentaireContenant.addEventListener("mouseenter", () =>{
   localStorage.setItem("idCommentaire", commentaire.id)
-  
 })
 commentaireContenant.addEventListener("mouseleave", () =>{
   localStorage.removeItem("idCommentaire")
@@ -75,7 +79,17 @@ removeCommentaire[i].addEventListener("click", () => {
     });
 
   });
-} })})}
+} 
+      })}
+    })
+
+    }
+
+      
+     
+      
+
+
 
   
 
