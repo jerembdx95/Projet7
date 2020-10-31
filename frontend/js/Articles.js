@@ -139,9 +139,6 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
         return response.json();
 
       })
-      .then(
-        alert("Commentaire supprimée")
-      )
       .catch((error) => {
         console.log(error);
       });

@@ -1,6 +1,7 @@
 let submitCommentaire = document.getElementsByClassName("post_commentaire");
 let idCommentaire;
 
+
 ////////////////* Affichage Commentaire *////////////////
 
 function getAllCommentaires() {
@@ -18,12 +19,12 @@ function getAllCommentaires() {
       console.log(commentaire);
 
       for (i=0; i<document.querySelectorAll(".post").length; i++){ 
-
-let idArticle = document.querySelectorAll(".post")[i].id;
+        let idArticle = document.querySelectorAll(".post")[i].id;
       
-commentaire.filter(function(commentaire) {return commentaire.article_id==idArticle}).forEach((commentaire) =>{ 
-
-  let listeCommentaire= document.querySelectorAll(".post")[i];
+commentaire.filter(function(commentaire) {return commentaire.article_id==idArticle}).forEach((commentaire) =>{
+  
+ let listeCommentaire= document.querySelectorAll(".post")[i];
+  
 
   let commentaireContenant = document.createElement("div");
   let commentaireDelete = document.createElement("p")
