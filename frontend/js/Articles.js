@@ -171,6 +171,10 @@ commentaireContenant.setAttribute("id", "advice")
 
   for (i=0 ; i< document.querySelectorAll("#commentaire").length; i++) {  
 
+    let x = "";
+
+    if (document.querySelectorAll("#commentaire")[i].value != x) { 
+
   fetch(url + "api/commentaire", {
     method: "POST",
     headers: { Authorization: "Bearer " + localStorage.getItem("token"), 
@@ -192,11 +196,8 @@ commentaireContenant.setAttribute("id", "advice")
     .catch((error) => {
       console.log(error);
     
-  
-  });
-    
- }
-
+  }); 
+ }}
 })});
 
         }
