@@ -188,11 +188,9 @@ commentaireContenant.setAttribute("id", "advice")
       }),
   })
     .then(function (response) {
+      location.reload()
       return response.json();
-    })
-    .then(
-      location.reload(),
-      
+    }
     )
     .catch((error) => {
       console.log(error);

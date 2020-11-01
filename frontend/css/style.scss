@@ -5,8 +5,7 @@
 }
 
 body{
-    background-color: #f0f2f5;
-    
+    background-color: white;
 }
 
 
@@ -115,9 +114,6 @@ img{
 
 /* Page Principale */
 
-#accueil{
-    background-color: #d3d8e0
-}
 
 .profil{
     border:  1px solid black;
@@ -184,6 +180,11 @@ footer{
 
 /* Create article */
 
+#miseEnPage{
+    height: 200px;
+    width: 100%;
+
+}
 
 .articles{
    

@@ -31,7 +31,7 @@ function loginUser() {
         localStorage.setItem("email", document.getElementById("email-login").value);
 
         console.log(userData.token);
-        let appUrl = "../html/accueil.html?userId=" + userData.id;
+        let appUrl = "../html/accueil.html";
         window.location = appUrl;
       }
     })

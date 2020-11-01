@@ -1,7 +1,6 @@
 let submitCommentaire = document.getElementsByClassName("post_commentaire");
 let idCommentaire;
 
-
 ////////////////* Affichage Commentaire *////////////////
 
 function getAllCommentaires() {
@@ -18,7 +17,7 @@ function getAllCommentaires() {
     .then(function (commentaire) {
       console.log(commentaire);
 
-      for (i=0; i<document.querySelectorAll(".post").length; i++){ 
+        for (i=0; i<document.querySelectorAll(".post").length; i++){ 
 
         let idArticle = document.querySelectorAll(".post")[i].id;
         let listeCommentaire= document.querySelectorAll(".post")[i];
@@ -29,7 +28,7 @@ function getAllCommentaires() {
   let commentaireDelete = document.createElement("p")
   let commentaireAuteur = document.createElement("p");
   let commentaireText = document.createElement("p");
-
+  
   listeCommentaire.appendChild(commentaireContenant);
   commentaireContenant.appendChild(commentaireDelete);
   commentaireContenant.appendChild(commentaireAuteur);
@@ -46,27 +45,18 @@ function getAllCommentaires() {
 
   ///* ajout id Commentaire ////
 
-commentaireContenant.addEventListener("mouseenter", () =>{
+commentaireContenant.addEventListener("mouseenter", () => {
   localStorage.setItem("idCommentaire", commentaire.id)
 })
-commentaireContenant.addEventListener("mouseleave", () =>{
+commentaireContenant.addEventListener("mouseleave", () => {
   localStorage.removeItem("idCommentaire")
 })
-  }); 
-}})}
 
-
-
-
-
-
-
-/*
-////////// Delete Commentaire //////////
+////* Delete Commentaire *////
 
 let removeCommentaire= document.querySelectorAll(".delete_commentaire");
 
-for (i=0 ; i<document.querySelectorAll(".delete_commentaire").length; i++) {
+for (i=0; i< removeCommentaire.length; i++ ){ 
 
 removeCommentaire[i].addEventListener("click", () => {
  
@@ -87,15 +77,16 @@ removeCommentaire[i].addEventListener("click", () => {
       console.log(error);
     });
 
-  });
-} 
-      })}
-    })
+  }); 
+  }})
+      }})}
 
-    }
 
-      
-     */
+
+
+
+
+
       
 
 
