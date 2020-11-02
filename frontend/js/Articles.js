@@ -71,7 +71,7 @@ let liste_article ;
         listeArticle.appendChild(titre_session);
         titre_session.innerHTML = "Actualités 🌎";
        
-        article.forEach((article) => {
+        article.reverse().forEach((article) => {
     
             let articleContenant = document.createElement("div");
             let info = document.createElement('p')
