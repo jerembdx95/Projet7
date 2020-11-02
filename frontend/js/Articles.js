@@ -121,8 +121,11 @@ let liste_article ;
       
    
 
-    deleteElement.addEventListener("click", ($event) => {
-    $event.preventDefault();
+   
+    
+
+    if (localStorage.getItem("id") == article.id_user){ 
+      deleteElement.addEventListener("click", () => {
     
     fetch(url + "api/article/" + localStorage.getItem("idArticle"), {
       method: "DELETE",
@@ -140,7 +143,11 @@ let liste_article ;
         console.log(error);
       });
   
-    })
+    })}
+    else{
+      deleteElement.innerHTML = "";
+    }
+   
 
 //* commentaire text aréa *//
 

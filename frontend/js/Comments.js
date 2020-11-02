@@ -55,6 +55,7 @@ commentaireContenant.addEventListener("mouseleave", () => {
 ////* Delete Commentaire *////
 
 let removeCommentaire= document.querySelectorAll(".delete_commentaire");
+if (localStorage.getItem("id") == commentaire.user_id){ 
 
 for (i=0; i< removeCommentaire.length; i++ ){ 
 
@@ -78,8 +79,11 @@ removeCommentaire[i].addEventListener("click", () => {
     });
 
   }); 
-  }})
-      }})}
+  }}
+else{ commentaireDelete.innerHTML = "";}
+
+}
+  ) }})}
 
 
 
