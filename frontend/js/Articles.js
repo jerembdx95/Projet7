@@ -4,22 +4,16 @@ let produit;
 let articles = [];
 let liste_article ;
 
-/////// Affichage Bienvenue  //////
-
-let welcome = document.getElementById('bienvenue');
-var name = localStorage.getItem('name');
-let affichage_welcome = document.createElement("p");
-welcome.appendChild(affichage_welcome);
-welcome.innerHTML = "Bonjour " + name + "🏠" ;
-
 //////// CREATION ARTICLE /////////
 
   function createArticle() {
 
-  let submitArticle = document.getElementById("Create_article");
+  let submitArticle = document.querySelector("#Create_article");
 
    submitArticle.addEventListener('submit', function(e){
+
     e.preventDefault();
+
     fetch(url + "api/article", {
       method: "POST",
       headers: { Authorization: "Bearer " + localStorage.getItem("token"),
@@ -29,6 +23,7 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
       description : document.getElementById("description").value,
       firstname : localStorage.getItem("name"),
       surname : localStorage.getItem("surname"),
+      id_user : localStorage.getItem("id"),
       }),
     })
       .then(function (response) {
@@ -123,6 +118,8 @@ welcome.innerHTML = "Bonjour " + name + "🏠" ;
             })
 
             //////// Supression article /////////
+      
+   
 
     deleteElement.addEventListener("click", ($event) => {
     $event.preventDefault();
