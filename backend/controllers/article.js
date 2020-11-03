@@ -8,9 +8,8 @@ exports.createArticle = (req, res, next) => {
   const firstname = req.body.firstname;
   const surname = req.body.surname;
   const id_user = req.body.id_user;
-  
 
-  const queryString = "INSERT INTO Articles (name, description, firstname, surname, id_user) VALUES (?, ?, ?, ?, ? )";
+  const queryString = "INSERT INTO Articles (name, description, firstname, surname, id_user) VALUES (?, ?, ?, ?, ?)";
   const inserts = [name, description, firstname, surname, id_user];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {

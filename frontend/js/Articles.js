@@ -1,6 +1,5 @@
 let url = "http://localhost:3000/";
 let produit;
-
 let articles = [];
 let liste_article ;
 
@@ -54,7 +53,6 @@ let liste_article ;
       },
     })
       .then(function (response) {
-        
         return response.json();
       })
       .then(function (article) {
@@ -74,7 +72,7 @@ let liste_article ;
         article.reverse().forEach((article) => {
     
             let articleContenant = document.createElement("div");
-            let info = document.createElement('p')
+            let info = document.createElement('p');
             let deleteContenant = document.createElement('div')
             let deleteElement = document.createElement('p')
             let articleTitre = document.createElement("h1");
@@ -101,7 +99,7 @@ let liste_article ;
             articleContenant.appendChild(articleDescription);
             articleContenant.appendChild(commentaireTrait);
 
-            info.innerHTML = "Posté par " + article.firstname + " " + article.surname + " ✉️";
+            info.innerHTML = "Posté par " + article.firstname + " " + article.surname + " ✉️" + " le " + article.date;
             deleteElement.innerHTML = "❌";
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
@@ -118,12 +116,7 @@ let liste_article ;
             })
 
             //////// Supression article /////////
-      
    
-
-   
-    
-
     if (localStorage.getItem("id") == article.id_user){ 
       deleteElement.addEventListener("click", () => {
     
