@@ -7,7 +7,6 @@ const userRoutes = require("./routes/user");
 const profilRoutes = require("./routes/profil");
 const articleRoutes = require("./routes/article");
 const commentaireRoutes = require("./routes/commentaire");
-console.log("test1")
 
 const app = express();
 

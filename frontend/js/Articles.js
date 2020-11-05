@@ -99,7 +99,23 @@ let liste_article ;
             articleContenant.appendChild(articleDescription);
             articleContenant.appendChild(commentaireTrait);
 
-            info.innerHTML = "Posté par " + article.firstname + " " + article.surname + " ✉️" + " le " + article.date;
+
+
+
+           /* Mise en Forme de la date  */
+                let date= new Date(article.date);
+                let dateArticle = date.getDate() +
+                "/" +
+                (date.getMonth() + 1) +
+                "/" +
+                date.getFullYear() +
+                " à " +
+                date.getHours() +
+                ":" +
+                ("0" + date.getMinutes()).slice(-2);
+            
+
+            info.innerHTML = "Posté par " + article.firstname + " " + article.surname + " ✉️" + " le " + dateArticle;
             deleteElement.innerHTML = "❌";
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;

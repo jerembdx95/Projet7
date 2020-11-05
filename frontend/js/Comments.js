@@ -41,7 +41,25 @@ function getAllCommentaires() {
 
   commentaireDelete.innerHTML = "🚫";
   commentaireText.innerHTML= commentaire.commentaire;
-  commentaireAuteur.innerHTML = commentaire.firstname + " " + commentaire.lastname;
+
+
+           /* Mise en Forme de la date  */
+           let date= new Date(commentaire.time);
+           let dateArticle = date.getDate() +
+           "/" +
+           (date.getMonth() + 1) +
+           "/" +
+           date.getFullYear() +
+           " à " +
+           date.getHours() +
+           ":" +
+           ("0" + date.getMinutes()).slice(-2);
+
+
+
+
+
+  commentaireAuteur.innerHTML =  commentaire.firstname + " " + commentaire.lastname + " 🗯️ " + " le " + dateArticle;
 
   ///* ajout id Commentaire ////
 

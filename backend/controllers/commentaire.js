@@ -20,7 +20,7 @@ exports.createCommentaire = (req, res, next) => {
 
 exports.getAllCommentaires = (req, res, next) => {
   const queryString =
-    "SELECT id, user_id, commentaire, firstname, lastname, article_id  FROM commentaires";
+    "SELECT id, user_id, commentaire, firstname, lastname, article_id, time  FROM commentaires";
   connection.query(queryString, (error, rows, fields) => {
     if (error) {
       return res.status(500).json({ error: "mysql" });

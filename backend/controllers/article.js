@@ -23,7 +23,7 @@ exports.createArticle = (req, res, next) => {
 
 
 exports.getAllArticles = (req, res, next) => {
-  const queryString = "SELECT id, name, description, firstname, surname, id_user FROM Articles";
+  const queryString = "SELECT id, name, description, firstname, surname, id_user, date FROM Articles";
   connection.query(queryString, (error, rows, fields) => {
     if(error) { 
         return res.status(500).json({ error: "mysql" });
