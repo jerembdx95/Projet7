@@ -213,6 +213,7 @@ commentaireContenant.setAttribute("id", "advice")
 })});
 
         }
+        getAllCommentaires();
       })
 
       .catch((error) => {

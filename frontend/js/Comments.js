@@ -17,10 +17,8 @@ function getAllCommentaires() {
     .then(function (commentaire) {
       console.log(commentaire);
 
-        for (i=0; i<document.querySelectorAll(".post").length; i++){ 
-
-        let idArticle = document.querySelectorAll(".post")[i].id;
-        let listeCommentaire= document.querySelectorAll(".post")[i];
+        let idArticle = document.querySelector(".post").id;
+        let listeCommentaire= document.querySelector(".post");
       
   commentaire.filter(function(commentaire) {return commentaire.article_id==idArticle}).forEach((commentaire) =>{
   
@@ -42,7 +40,6 @@ function getAllCommentaires() {
   commentaireDelete.innerHTML = "🚫";
   commentaireText.innerHTML= commentaire.commentaire;
 
-
            /* Mise en Forme de la date  */
            let date= new Date(commentaire.time);
            let dateArticle = date.getDate() +
@@ -54,10 +51,6 @@ function getAllCommentaires() {
            date.getHours() +
            ":" +
            ("0" + date.getMinutes()).slice(-2);
-
-
-
-
 
   commentaireAuteur.innerHTML =  commentaire.firstname + " " + commentaire.lastname + " 🗯️ " + " le " + dateArticle;
 
@@ -99,9 +92,8 @@ removeCommentaire[i].addEventListener("click", () => {
   }); 
   }}
 else{ commentaireDelete.innerHTML = "";}
-
 }
-  ) }})}
+  ) })}
 
 
 
