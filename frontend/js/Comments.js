@@ -83,28 +83,9 @@ function getAllCommentaires() {
           .catch((error) => {
             console.log(error);
           });
-      
         }); 
-        
-      
-        
-
-
-
-
-
-
       })
-  
-
-
-
   } 
-
-
-
-
-
 }
       )}
 
