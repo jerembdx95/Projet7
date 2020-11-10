@@ -64,7 +64,30 @@ function getAllCommentaires() {
       commentaireContenant.addEventListener("mouseleave", () => {
         localStorage.removeItem("idCommentaire")
       })
-
+ 
+      commentaireDelete.addEventListener("click", () => {
+ 
+        fetch(url + "api/commentaire/" + localStorage.getItem("idCommentaire"), {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(
+            location.reload(),
+          )
+          .catch((error) => {
+            console.log(error);
+          });
+      
+        }); 
+        
+      
+        
 
 
 
