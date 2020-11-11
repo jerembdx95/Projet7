@@ -1,7 +1,7 @@
 
 *{
 	margin:0px;
-	padding:0px;
+	
 }
 
 body{
@@ -409,3 +409,103 @@ color: #ffffff;
     }
 
 }
+
+
+//////////////////////////// Responsive Login Page  //////////////////////
+
+
+@media (max-width: 877px) { 
+
+.container{
+    img{
+        width: 200px;
+    }
+    p{
+        margin-left: 0px;
+    }
+    #login-form {
+        margin-left: 40px;
+        width: 200px;
+        font-family: Tahoma, Geneva, sans-serif;
+    }
+}
+ }
+
+
+ @media (max-width: 663px) {
+
+    .container{
+        display: inline; 
+        
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        p{
+            display: none;
+        }
+        
+       
+        #login-form {
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            font-family: Tahoma, Geneva, sans-serif;
+        }
+        #image{
+            margin-top: 50px;
+        }
+    }
+  }
+
+
+  //////////////////////////// Responsive Sign Up  //////////////////////
+
+
+  @media (max-width: 977px) {
+
+    .container{
+        img{
+            width: 300px;
+        }
+        p{
+            margin-left: 0px;
+        }
+        
+    }
+    
+  }
+  @media (max-width: 870px) {
+
+    body{
+        margin-top: 30px;
+    }
+    #container_sU{
+        display: inline; 
+        
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        p{
+            display: none;
+        }
+       form{
+           margin-left: auto;
+           margin-right: auto;
+           margin-top: 30px;
+           width: 70%;
+           
+       }
+
+  }
+  }
+
+//////////////////////////// Responsive Accueil  //////////////////////
+
+

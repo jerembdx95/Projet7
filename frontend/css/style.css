@@ -1,6 +1,5 @@
 * {
   margin: 0px;
-  padding: 0px;
 }
 
 body {
@@ -434,5 +433,75 @@ footer #Copyright {
 
 #delete_user:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 877px) {
+  .container img {
+    width: 200px;
+  }
+  .container p {
+    margin-left: 0px;
+  }
+  .container #login-form {
+    margin-left: 40px;
+    width: 200px;
+    font-family: Tahoma, Geneva, sans-serif;
+  }
+}
+
+@media (max-width: 663px) {
+  .container {
+    display: inline;
+  }
+  .container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container p {
+    display: none;
+  }
+  .container #login-form {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    font-family: Tahoma, Geneva, sans-serif;
+  }
+  .container #image {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 977px) {
+  .container img {
+    width: 300px;
+  }
+  .container p {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 870px) {
+  body {
+    margin-top: 30px;
+  }
+  #container_sU {
+    display: inline;
+  }
+  #container_sU img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #container_sU p {
+    display: none;
+  }
+  #container_sU form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 70%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
