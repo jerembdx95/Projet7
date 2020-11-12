@@ -161,7 +161,7 @@ footer{
     box-shadow: 1px 1px 12px gray;
     background-color: white;
     
-
+   
     a{
         text-decoration: none;
         color: black;
@@ -176,6 +176,16 @@ footer{
 
 #accueil_footer{
     margin-top: 70px;
+}
+
+
+#mentions_legales{
+    margin: 50px;
+    h1{
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
 }
 
 /* Create article */
@@ -369,7 +379,6 @@ color: #ffffff;
 /* Profil Page */
 
 #profil{
-
     border: 1px solid black;
     padding: 14px;
     border-radius: 5px;
@@ -508,4 +517,59 @@ color: #ffffff;
 
 //////////////////////////// Responsive Accueil  //////////////////////
 
+@media (max-width: 1030px) {
+    #accueil_footer{
+        display: none;
+    }
+}
 
+
+@media (max-width: 525px) {
+    .header_login{
+        display: inline;
+        
+        h1{
+            text-align: center;
+        }
+    }
+    #header_menu{
+       padding: 0px;
+       margin-left: 18%; 
+    }
+    #header_menu li{
+        margin-left: 10px;
+        margin-right: 10px;  
+    }
+}
+
+@media (max-width: 375px) {
+    .articles{
+        h1{
+            font-size: 20px;
+        }
+    }
+    #zero_news{
+        font-size: 20px;
+    }
+    #NewsFeed{
+        padding-top: 20px;
+    }
+}
+
+//////////////////////////// Responsive Profil  //////////////////////
+
+@media (max-width: 871px) {
+#body_profil{
+    margin-top: 0px;
+}
+}
+
+@media (max-width: 680px) {
+#profil_footer{
+    display: none;
+}}
+
+@media (max-width: 450px) {
+    #profil{
+        width: 280px;
+    }}
