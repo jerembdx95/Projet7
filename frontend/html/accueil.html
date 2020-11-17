@@ -6,32 +6,34 @@
     <title>FEED</title>
     <link rel="stylesheet" href="/frontend/css/style.css" />
 </head>
-<body id='accueil'>
+<body >
+    <main id='accueil'>
         <div class='header_login'>
-        <h1>Groupomania</h1>
-        <ul id='header_menu'>
-            <li>Accueil</li>
-            <li><a href="profil.html" >Profil</a></li>
-            <li id='logout'>Déconnexion </li>
-        </ul>
-      </div>
-      <div class='articles'> 
-                   <form  method="POST" id="Create_article">
-                   <h1>Exprime toi 💬</h1>
-                    <input id="article-nom" type="text" name="Name" placeholder="Titre" required /> 
-                    <textarea id="description" type="text" name="story"  placeholder="Message" rows="5" cols="33"></textarea>
-                    <button type="submit" id="signup_button1">Post</button>
-                    </form>
-                    <hr id='separation'>
+            <h1>Groupomania</h1>
+                <ul id='header_menu'>
+                    <li>Accueil</li>
+                    <li><a href="profil.html" >Profil</a></li>
+                    <li id='logout'>Déconnexion </li>
+                </ul>
+        </div>
+        <div class='articles'> 
+            <form  method="POST" id="Create_article">
+                <h1>Exprime toi 💬</h1>
+                <input id="article-nom" type="text" name="Name" placeholder="Titre" required /> 
+                <textarea id="description" type="text" name="story"  placeholder="Message" rows="5" cols="33"></textarea>
+                <button type="submit" id="signup_button1">Post</button>
+            </form>
+                <hr id='separation'>
+        </div>
+            <div id='NewsFeed'>
+                <h1 id="zero_news">Aucune actualitée 😒</h1>
             </div>
-                <div id='NewsFeed'>
-                    <h1 id="zero_news">Aucune actualitée 😒</h1>
-                </div>
-                <footer id='accueil_footer'>
-                      <a  href="/frontend/html/Mentions_Legales.html"> Mentions Légales </a>
-                      <p id='Copyright'>Copyright © 2020 Groupomania - Tous droits réservés</p>
-                      <a  id='NousContacter'  href="mailto:nullepart@gmail.com">Contactez-nous</a>
-                      </footer>
+    </main>
+    <footer id='accueil_footer'>
+        <a  href="/frontend/html/Mentions_Legales.html"> Mentions Légales </a>
+            <p id='Copyright'>Copyright © 2020 Groupomania - Tous droits réservés</p>
+            <a  id='NousContacter'  href="mailto:nullepart@gmail.com">Contactez-nous</a>
+    </footer>
 </body>
 <script src="/frontend/js/logout.js" ></script>
 <script src="/frontend/js/Articles.js" ></script>

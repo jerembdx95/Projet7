@@ -115,7 +115,7 @@ let liste_article ;
                 ("0" + date.getMinutes()).slice(-2);
             
 
-            info.innerHTML = "Posté par " + article.firstname + " " + article.surname + " ✉️" + " le " + dateArticle;
+            info.innerHTML = article.firstname + " " + article.surname + " ✉️" + " le " + dateArticle;
             deleteElement.innerHTML = "❌";
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;

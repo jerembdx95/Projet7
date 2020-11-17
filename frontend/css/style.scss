@@ -4,9 +4,8 @@
 
 body{
     background-color: white;
-   
+    
 }
-
 
 /* Login page */
 
@@ -129,6 +128,7 @@ img{
     box-shadow: 2px 2px 2px black ;
     
 }
+
 #header_menu{
         display: flex;
         flex-direction: row;
@@ -159,8 +159,6 @@ footer{
     justify-content: space-between;
     box-shadow: 1px 1px 12px gray;
     background-color: white;
-   
-   
     a{
         text-decoration: none;
         color: black;
@@ -175,8 +173,10 @@ footer{
 
 #accueil_footer{
     margin-top: 70px;
+    position : fixed;
+    bottom: 0;
+    
 }
-
 
 #mentions_legales{
     margin: 50px;
@@ -185,6 +185,10 @@ footer{
         margin-bottom: 20px;
     }
     
+}
+
+#accueil{
+    padding-bottom: 150px
 }
 
 /* Create article */

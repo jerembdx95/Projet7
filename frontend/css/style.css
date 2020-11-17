@@ -206,6 +206,8 @@ footer #Copyright {
 
 #accueil_footer {
   margin-top: 70px;
+  position: fixed;
+  bottom: 0;
 }
 
 #mentions_legales {
@@ -215,6 +217,10 @@ footer #Copyright {
 #mentions_legales h1 {
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+#accueil {
+  padding-bottom: 150px;
 }
 
 /* Create article */
