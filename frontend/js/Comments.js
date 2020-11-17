@@ -56,7 +56,7 @@ function getAllCommentaires() {
       
         commentaireAuteur.innerHTML =  commentaire.firstname + " " + commentaire.lastname + " 🗯️ " + " le " + dateArticle;
       
-        ///* ajout id Commentaire ////
+///* ajout id Commentaire ////
       
       commentaireContenant.addEventListener("mouseenter", () => {
         localStorage.setItem("idCommentaire", commentaire.id)
@@ -64,7 +64,12 @@ function getAllCommentaires() {
       commentaireContenant.addEventListener("mouseleave", () => {
         localStorage.removeItem("idCommentaire")
       })
+
+/////* Suppression des commentaires ////////
  
+if (localStorage.getItem("id") == commentaire.user_id){ 
+
+
       commentaireDelete.addEventListener("click", () => {
  
         fetch(url + "api/commentaire/" + localStorage.getItem("idCommentaire"), {
@@ -84,7 +89,14 @@ function getAllCommentaires() {
             console.log(error);
           });
         }); 
-      })
+      }
+    else{
+      commentaireDelete.innerHTML = "";
+    }
+    
+    }
+      
+      )
   } 
 }
       )}
