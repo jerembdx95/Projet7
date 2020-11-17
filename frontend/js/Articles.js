@@ -128,7 +128,6 @@ let liste_article ;
             })
             articleContenant.addEventListener("mouseleave", () =>{
               localStorage.removeItem("idArticle")
-              
             })
 
             //////// Supression article /////////
