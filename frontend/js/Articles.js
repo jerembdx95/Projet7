@@ -180,14 +180,13 @@ let liste_article ;
     validation_Update.innerHTML = "Valider modification du post";
 
     
-
     validation_Update.addEventListener("click", ()=> {
       fetch(url + "api/article/" + localStorage.getItem("idArticle"), {
         method: "PATCH",
         headers: { Authorization: "Bearer " + localStorage.getItem("token"),
         "Content-Type": "application/json" },
         body: JSON.stringify({
-            name: document.querySelector(".updateTitre").value,
+            titre: document.querySelector(".updateTitre").value,
             description: document.querySelector(".updateTexte").value,
       })
     })

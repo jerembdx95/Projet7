@@ -56,29 +56,25 @@ exports.getOneArticle = (req, res, next) => {
 });
 };
 
-
 exports.updateOneArticle = (req, res, next) => {
-  const id = req.params.id;
   
-  const name = req.body.name;
+  const id = req.params.id;
+  const name = req.body.titre;
   const description = req.body.description;
   
-  const queryString = "UPDATE Articles SET name = ?, description = ?  WHERE id = ?";
-  const inserts = [name, description];
+  const queryString = "UPDATE Articles SET name = ?, description = ?,  WHERE id = ?";
+  const inserts = [name, description, id];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {
-    
     if(error)
     {
         return res.status(500).json({ error: "mysql" });
     }
-    
-      
+     
     res.status(200).json({ message: 'Article modifié !'});
   }
 );
 };
-
 
 exports.deleteArticle = (req, res, next) => {
   const id = req.params.id;
