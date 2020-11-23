@@ -62,7 +62,7 @@ exports.updateOneArticle = (req, res, next) => {
   const name = req.body.titre;
   const description = req.body.description;
   
-  const queryString = "UPDATE Articles SET name = ?, description = ?,  WHERE id = ?";
+  const queryString = "UPDATE Articles SET name = ?, description = ?  WHERE id = ?";
   const inserts = [name, description, id];
   connection.query(queryString, inserts, (error, rows, fields) =>
   {
