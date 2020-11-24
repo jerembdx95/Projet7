@@ -73,8 +73,9 @@ let liste_article ;
     
             let articleContenant = document.createElement("div");
             let info = document.createElement('p');
-            let deleteContenant = document.createElement('div')
-            let deleteElement = document.createElement('p')
+            let deleteContenant = document.createElement('div');
+            let deleteElement = document.createElement('p');
+            let updateArticle = document.createElement('p');
             let articleTitre = document.createElement("h1");
             let articleTrait = document.createElement("hr");
             let articleDescription = document.createElement("p");
@@ -85,6 +86,7 @@ let liste_article ;
             articleTitre.setAttribute("class", "titre-article");
             articleDescription.setAttribute("class", "description-article");
             deleteElement.setAttribute("id", "delete");
+            updateArticle.setAttribute("id", "update_article");
             info.setAttribute("class", "info");
             deleteContenant.setAttribute("class", "delete_contenant");
             commentaireTrait.setAttribute("id", "trait_separation");
@@ -93,14 +95,12 @@ let liste_article ;
             listeArticle.appendChild(articleContenant);
             articleContenant.appendChild(info);
             articleContenant.appendChild(deleteContenant);
+            articleContenant.appendChild(updateArticle);
             deleteContenant.appendChild(deleteElement)
             articleContenant.appendChild(articleTitre);
             articleContenant.appendChild(articleTrait);
             articleContenant.appendChild(articleDescription);
             articleContenant.appendChild(commentaireTrait);
-
-
-
 
            /* Mise en Forme de la date  */
                 let date= new Date(article.date);
@@ -117,6 +117,7 @@ let liste_article ;
 
             info.innerHTML = article.firstname + " " + article.surname + " ✉️" + " le " + dateArticle;
             deleteElement.innerHTML = "❌";
+            updateArticle.innerHTML = "✏️"
             articleTitre.innerHTML = article.name;
             articleDescription.innerHTML = article.description;
 
@@ -155,7 +156,56 @@ let liste_article ;
     else{
       deleteElement.innerHTML = "";
     }
-   
+
+ ///* Modification Article */////
+
+
+ if (localStorage.getItem("id") == article.id_user){ 
+   updateArticle.addEventListener("click", ()=> {
+     
+    let inputUpdateTitre = document.createElement("textarea");
+    let inputUpdateTexte = document.createElement("textarea");
+    let validation_Update = document.createElement("button");
+
+    inputUpdateTitre.innerHTML = article.name;
+    inputUpdateTexte.innerHTML = article.description;
+
+    inputUpdateTitre.setAttribute("class", "updateTitre");
+    inputUpdateTexte.setAttribute("class", "updateTexte");
+
+    articleTitre.replaceWith(inputUpdateTitre);
+    articleDescription.replaceWith(inputUpdateTexte);
+
+    commentaireTrait.appendChild(validation_Update);
+
+    validation_Update.innerHTML = "Valider modification du post";
+
+    
+    validation_Update.addEventListener("click", ()=> {
+      fetch(url + "api/article/" + localStorage.getItem("idArticle"), {
+        method: "PATCH",
+        headers: { Authorization: "Bearer " + localStorage.getItem("token"),
+        "Content-Type": "application/json" },
+        body: JSON.stringify({
+            titre: document.querySelector(".updateTitre").value,
+            description: document.querySelector(".updateTexte").value,
+      })
+    })
+        .then(function (response) {
+          location.reload()
+          return response.json();
+        })
+        .then()
+        .catch((error) => {
+          console.log(error);
+        })
+    
+    })
+   })
+ }
+ else{
+   updateArticle.innerHTML = "";
+ }
 
 //* commentaire text aréa *//
 
@@ -176,7 +226,6 @@ commentaireContenant.setAttribute("id", "advice")
 
 
 //////////////* Création commentaire */////////////
-
 
   submitCommentaire.addEventListener("click", ($event) => {
   $event.preventDefault();
@@ -210,7 +259,6 @@ commentaireContenant.setAttribute("id", "advice")
   }); 
  }}
 })});
-
         }
         getAllCommentaires();
       })

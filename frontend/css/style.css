@@ -363,6 +363,13 @@ footer #Copyright {
   text-align: center;
 }
 
+#update_article {
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  cursor: pointer;
+}
+
 .post_commentaire {
   width: 100%;
   padding: 15px;
