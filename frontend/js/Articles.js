@@ -159,7 +159,6 @@ let liste_article ;
 
  ///* Modification Article */////
 
-
  if (localStorage.getItem("id") == article.id_user){ 
    updateArticle.addEventListener("click", ()=> {
      
@@ -170,6 +169,9 @@ let liste_article ;
 
     inputUpdateTitre.innerHTML = article.name;
     inputUpdateTexte.innerHTML = article.description;
+
+
+    updateArticle.innerHTML = "";
 
     inputUpdateTitre.setAttribute("class", "updateTitre");
     inputUpdateTexte.setAttribute("class", "updateTexte");
@@ -229,7 +231,6 @@ commentaire.setAttribute("id", "commentaire");
 submitCommentaire.setAttribute("class", "post_commentaire")
 commentaireContenant.setAttribute("id", "advice")
 
-
 //////////////* Création commentaire */////////////
 
   submitCommentaire.addEventListener("click", ($event) => {
@@ -260,7 +261,6 @@ commentaireContenant.setAttribute("id", "advice")
     )
     .catch((error) => {
       console.log(error);
-    
   }); 
  }}
 })});

@@ -126,6 +126,10 @@ img {
 }
 
 /* Page Principale */
+#imagePrincipale img {
+  width: 100%;
+}
+
 .profil {
   border: 1px solid black;
   width: 200px;
@@ -368,30 +372,6 @@ footer #Copyright {
   top: 0px;
   right: 25px;
   cursor: pointer;
-}
-
-.updateTitre{
-    width: 90%;
-    padding: 15px;
-    border: 1px solid #dddddd;
-    margin-bottom: 15px;
-}
-.updateTitre{
-    width: 70%;
-    padding: 15px;
-    border: 1px solid #dddddd;
-    margin-bottom: 15px;
-    margin-left: 15px;
-  }
-  
-.updateTexte{
-    width: 70%;
-    padding: 15px;
-    border: 1px solid #dddddd;
-    margin-bottom: 15px;
-    margin-top: 5px;
-    margin-left: 15px;
-
 }
 
 .post_commentaire {
