@@ -17,13 +17,13 @@
                 </ul>
         </div>
         <div id="imagePrincipale">
-            <img src="/frontend/html/images/couverture site copie.png">
+            <img src="/frontend/html/images/couverture.png" alt="imageCouverture">
         </div>
         <div class='articles'> 
             <form  method="POST" id="Create_article">
                 <h1>Exprime-toi 💬</h1>
-                <input id="article-nom" type="text" name="Name" placeholder="Titre" required /> 
-                <textarea id="description" type="text" name="story"  placeholder="Message" rows="5" cols="33"></textarea>
+                <input id="article-nom"  name="Name" placeholder="Titre" required /> 
+                <textarea id="description"  name="story"  placeholder="Message" rows="5" cols="33"></textarea>
                 <button type="submit" id="signup_button1">Post</button>
             </form>
                 <hr id='separation'>
@@ -37,12 +37,11 @@
             <p id='Copyright'>Copyright © 2020 Groupomania - Tous droits réservés</p>
             <a  id='NousContacter'  href="mailto:nullepart@gmail.com">Contactez-nous</a>
     </footer>
+    <script src="/frontend/js/logout.js" ></script>
+    <script src="/frontend/js/Articles.js" ></script>
+    <script src="/frontend/js/Comments.js"></script> 
+    <script> logout()</script>
+    <script> createArticle()</script>
+    <script> getAllArticles()</script>
 </body>
-<script src="/frontend/js/logout.js" ></script>
-<script src="/frontend/js/Articles.js" ></script>
-<script src="/frontend/js/Comments.js"></script> 
-<script src="/frontend/js/update_article.js"></script>
-<script> logout()</script>
-<script> createArticle()</script>
-<script> getAllArticles()</script>
 </html>
