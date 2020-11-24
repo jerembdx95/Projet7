@@ -156,18 +156,19 @@ let liste_article ;
     else{
       deleteElement.innerHTML = "";
     }
+
  ///* Modification Article */////
 
 
  if (localStorage.getItem("id") == article.id_user){ 
    updateArticle.addEventListener("click", ()=> {
      
-    let inputUpdateTitre = document.createElement("input");
-    let inputUpdateTexte = document.createElement("input");
+    let inputUpdateTitre = document.createElement("textarea");
+    let inputUpdateTexte = document.createElement("textarea");
     let validation_Update = document.createElement("button");
 
-    inputUpdateTitre.placeholder = "nouveau titre";
-    inputUpdateTexte.placeholder = "nouveau texte";
+    inputUpdateTitre.innerHTML = article.name;
+    inputUpdateTexte.innerHTML = article.description;
 
     inputUpdateTitre.setAttribute("class", "updateTitre");
     inputUpdateTexte.setAttribute("class", "updateTexte");
@@ -191,8 +192,10 @@ let liste_article ;
       })
     })
         .then(function (response) {
+          location.reload()
           return response.json();
         })
+        .then()
         .catch((error) => {
           console.log(error);
         })
@@ -204,8 +207,6 @@ let liste_article ;
    updateArticle.innerHTML = "";
  }
 
-
-   
 //* commentaire text aréa *//
 
 let commentaireContenant = document.createElement("div");
@@ -225,7 +226,6 @@ commentaireContenant.setAttribute("id", "advice")
 
 
 //////////////* Création commentaire */////////////
-
 
   submitCommentaire.addEventListener("click", ($event) => {
   $event.preventDefault();
