@@ -167,11 +167,13 @@ let liste_article ;
     let inputUpdateTexte = document.createElement("textarea");
     let validation_Update = document.createElement("button");
 
+
     inputUpdateTitre.innerHTML = article.name;
     inputUpdateTexte.innerHTML = article.description;
 
     inputUpdateTitre.setAttribute("class", "updateTitre");
     inputUpdateTexte.setAttribute("class", "updateTexte");
+    validation_Update.setAttribute("class", "post_commentaire");
 
     articleTitre.replaceWith(inputUpdateTitre);
     articleDescription.replaceWith(inputUpdateTexte);
@@ -179,6 +181,9 @@ let liste_article ;
     commentaireTrait.appendChild(validation_Update);
 
     validation_Update.innerHTML = "Valider modification du post";
+
+    
+    document.querySelector(".commentaire_contenant").style.display = "none";
 
     
     validation_Update.addEventListener("click", ()=> {
