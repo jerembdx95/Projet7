@@ -53,7 +53,7 @@ img{
 .signup_button1 {
     width: 100%;
     padding: 15px;
-    background-color: #1da1f2;
+    background-color: #1C7DB7;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
@@ -66,9 +66,10 @@ img{
 .signup_button {
     width: 100%;
     padding: 15px;
-    background-color: #7dcd6c;
+    background-color: #44853C;
     border: 0;
     box-sizing: border-box;
+    font-weight: bold;
     cursor: pointer;
     font-weight: bold;
     color: #ffffff;
@@ -88,9 +89,9 @@ img{
     font-size: 15px;
     a{
         text-decoration: none;
-        color: #7dcd6c;
+        color: #44853C;
         &:hover {
-            color: #1da1f2;
+            color: #1C7DB7;
         }
     }
 }
@@ -213,7 +214,7 @@ footer{
 #NewsFeed{ 
     margin: auto;
     padding-top: 50px;
-    padding-left: 30px;
+    
     width: 60%;   
 }
 
@@ -300,7 +301,7 @@ text-align: center;
   #signup_button1 {
     width: 100%;
     padding: 15px;
-    background-color: #7dcd6c;
+    background-color: #44853C;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
@@ -343,7 +344,7 @@ text-align: center;
 .post_commentaire{ 
 width: 100%;
 padding: 15px;
-background-color: #1da1f2;
+background-color: #1C7DB7;
 border: 0;
 box-sizing: border-box;
 cursor: pointer;
@@ -460,9 +461,7 @@ color: #ffffff;
             margin-left: auto;
             margin-right: auto;
         }
-        p{
-            display: none;
-        }
+    
         
         #login-form {
             margin-top: 50px;
@@ -497,16 +496,15 @@ color: #ffffff;
     body{
         margin-top: 30px;
     }
+    .phrase_accroche{
+        display: none;
+       }
     #container_sU{
         display: inline; 
-        
         img{
             display: block;
             margin-left: auto;
             margin-right: auto;
-        }
-        p{
-            display: none;
         }
        form{
            margin-left: auto;
@@ -514,6 +512,7 @@ color: #ffffff;
            margin-top: 30px;
            width: 70%;
        }
+      
 
   }
   }
@@ -538,10 +537,39 @@ color: #ffffff;
     #header_menu{
        padding: 0px;
        margin-left: 18%; 
+       margin-bottom: 10px;
     }
     #header_menu li{
-        margin-left: 10px;
-        margin-right: 10px;  
+        
+        margin-right: 12px;  
+    }
+
+    #commentaire{
+        width: 90%;
+    }
+    #update_article{
+        top: 18px;
+    }
+    .post #delete{
+        top: 18px;
+    }
+
+    #imagePrincipale{
+        display: none;
+    }
+    .titre-article{
+        font-size: 20px;
+    }
+    .name_commentaire{
+        font-size: 12px;
+    }
+
+    .description-article{
+        font-size: 15px;
+    }
+
+    #exprime-toi{
+        font-size: 22px;
     }
 }
 
@@ -559,6 +587,7 @@ color: #ffffff;
     }
 }
 
+
 //////////////////////////// Responsive Profil  //////////////////////
 
 @media (max-width: 871px) {
@@ -575,4 +604,16 @@ color: #ffffff;
 @media (max-width: 450px) {
     #profil{
         width: 280px;
-    }}
+    }
+}
+
+@media (max-width: 330px) {
+    #header_menu{
+        margin: auto;
+        margin-left: 20px;
+    }
+
+    .post{
+       
+    }
+}
