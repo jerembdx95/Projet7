@@ -9,8 +9,6 @@ var schema = new passwordValidator();
   .is()
   .min(3) 
   
-
-
 exports.signup = (req, res, next) => {
   if (!schema.validate(req.body.password)) {
     //Test du format du mot de passe
